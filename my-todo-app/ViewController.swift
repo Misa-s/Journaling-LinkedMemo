@@ -9,18 +9,15 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PostDelegate {
     
-    func addItem(text: String) {
-        self.todoList.insert(text, at: 0)
-        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
-    }
-    
     @IBOutlet weak var tableView: UITableView!
-    
     var todoList = [String]()
+   
     
     // イニシャライザー的なやつ
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "MemoTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,10 +26,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // UITableViewを継承するとこれ必須の模様, リスト -> cell のアクションなのかな
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath)
         let todoTitle = todoList[indexPath.row]
-        cell.textLabel?.text = todoTitle
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MemoTableViewCell
+        cell.memo.text = todoTitle
         return cell
+    }
+
+    func addItem(text: String) {
+        self.todoList.insert(text, at: 0)
+        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
     }
     
     @IBAction func addButtonAction(_ sender: Any) {
@@ -59,5 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         modalView?.delegate = self
         return modalView
     }
+
+
 }
 
