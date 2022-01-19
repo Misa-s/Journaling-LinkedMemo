@@ -32,30 +32,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
 
+    // deletegeでモーダルから呼ばれる
     func addItem(text: String) {
         self.todoList.insert(text, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
     }
     
-    @IBAction func addButtonAction(_ sender: Any) {
-        let alertController = UIAlertController(title: "TODO追加", message: "入力して下さい", preferredStyle: UIAlertController.Style.alert)
-        alertController.addTextField(configurationHandler: nil)
-        
-        let okAction = UIAlertAction(title: "追加", style: UIAlertAction.Style.default) { (acrion: UIAlertAction) in
-            // 追加：OKをタップした時の処理
-            if let textField = alertController.textFields?.first {
-                self.todoList.insert(textField.text!, at: 0)
-                self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
-            }
-        }
-        alertController.addAction(okAction)
-        
-        let cancelAction = UIAlertAction(title: "CANCEL", style: UIAlertAction.Style.cancel, handler: nil)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated:true, completion: nil)
-    }
-    
+    // 追加ボタン押下
     @IBSegueAction func openModalSegueAction(_ coder: NSCoder) -> AddModalViewController? {
         let modalView = AddModalViewController(coder: coder)
         modalView?.delegate = self
