@@ -7,7 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PostDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate {
+    
+
+    
     
     @IBOutlet weak var tableView: UITableView!
     var memoList = [String]()
@@ -17,23 +20,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // セルの幅がデバイスによって変わるので画面サイズに合わせる
+        // セルの幅がデバイスによって変わるので画面サイズに合わせる TODO: 横向きにしたとき
         let screenRect = UIScreen.main.bounds
-            tableView.frame = CGRect(x: 0, y: 0, width: screenRect.width, height: screenRect.height)
+        tableView.frame = CGRect(x: 0, y: 0, width: screenRect.width, height: screenRect.height)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memoList.count
     }
     
+    let MEMO = 1
+    let DATA_TIME = 2
     // UITableViewを継承するとこれ必須の模様, セルの描画？
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let memoText = memoList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: indexPath)
         
-        let MEMO = 1
-        let DATA_TIME = 2
+        // IndexPathを持たせておく
+        cell.tag = indexPath.row
         
         // Cellのメモ
         let memoLabel = cell.viewWithTag(MEMO) as! UILabel
@@ -42,16 +47,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Cellの投稿時間
         let dataTimeLabel = cell.viewWithTag(DATA_TIME) as! UILabel
         dataTimeLabel.text = getNowClockString()
-       
+        
         return cell
     }
     
     func getNowClockString() -> String {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd' 'HH:mm"
-            let now = Date()
-            return formatter.string(from: now)
-        }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd' 'HH:mm"
+        let now = Date()
+        return formatter.string(from: now)
+    }
     
     // セルの削除機能
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -61,32 +66,52 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    // セルがタップされた時の処理
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        tableView.deselectRow(at: indexPath, animated: true)
-    //
-    //        //　タップされたセルの取得
-    //        let cell = self.tableView.cellForRow(at:indexPath) as! MemoTableViewCell
-    //
-    //        let storyboard: UIStoryboard = self.storyboard!
-    //        let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! AddModalViewController
-    //        modalView.delegate = self
-    //
-    //        modalView.memo.text = cell.memo.text // modalのメモがnil、なぜ
-    //        present(modalView, animated: true, completion: nil)
-    //    }
-    
-    // deletegeでモーダルから呼ばれる
+    // 【新規追加】deletegeでモーダルから呼ばれる
     func addItem(text: String) {
         self.memoList.insert(text, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
     }
     
     // 新規追加モーダルの表示
-    @IBAction func openAddModal(_ sender: Any) {
+    @IBAction func openAddModal(_ sender: UIButton) {
         let storyboard: UIStoryboard = self.storyboard!
-        let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! AddModalViewController
-        modalView.delegate = self
+        let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! MemoModalViewController
+        modalView.addDelegate = self
+        modalView.editDelegate = self
+        modalView.mode = .add // TODO: initで渡したかったが断念、暫定
+        self.present(modalView, animated: true, completion: nil)
+    }
+    
+    
+    // 【編集】deletegeでモーダルから呼ばれる
+    func editItem(text: String, index: Int) {
+        // 対象のセルを取得
+        let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: index))
+        
+        // Cellのメモ
+        let memoLabel = cell?.viewWithTag(MEMO) as! UILabel
+        memoLabel.text = text
+        
+        // Cellの投稿時間
+        let dataTimeLabel = cell?.viewWithTag(DATA_TIME) as! UILabel
+        dataTimeLabel.text = getNowClockString()
+    }
+    
+    // 編集モーダルの表示
+    @IBAction func openEditModal(_ sender: UIButton) {
+        let idx = sender.tag
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: IndexPath(row: 0, section: idx))
+        
+        let storyboard: UIStoryboard = self.storyboard!
+        let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! MemoModalViewController
+        modalView.addDelegate = self
+        modalView.editDelegate = self
+        modalView.mode = .edit
+        modalView.index = idx
+        
+        // Cellのメモ
+        let memoLabel = cell.viewWithTag(MEMO) as! UILabel
+        modalView.memo?.text = memoLabel.text
         self.present(modalView, animated: true, completion: nil)
     }
 }
