@@ -14,6 +14,7 @@ protocol PostDelegate: class {
 class AddModalViewController: UIViewController {
     
     @IBOutlet weak var memo: UITextView!
+
     weak var delegate: PostDelegate?
     
     override func viewDidLoad() {
@@ -22,7 +23,7 @@ class AddModalViewController: UIViewController {
     
     @IBAction func addButton(_ sender: Any) {
         // delegateを使って処理を委任
-        delegate?.addItem(text: memo.text)
+        delegate?.addItem(text: memo!.text)
         // モーダルを閉じる
         dismiss(animated: true, completion: nil)
     }

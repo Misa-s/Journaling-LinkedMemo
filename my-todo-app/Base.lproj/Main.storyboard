@@ -44,7 +44,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="v82-N0-EXB" kind="presentation" identifier="openModalSegue" destinationCreationSelector="openModalSegueAction:" modalTransitionStyle="coverVertical" id="SX7-66-hdX"/>
+                                    <action selector="openAddModal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IAe-lW-efN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,22 +67,22 @@
         <!--モーダル-->
         <scene sceneID="msC-kw-yDU">
             <objects>
-                <viewController title="モーダル" id="v82-N0-EXB" customClass="AddModalViewController" customModule="my_todo_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="modalView" title="モーダル" id="v82-N0-EXB" customClass="AddModalViewController" customModule="my_todo_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kLC-d3-Xsy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-QF-txh">
-                                <rect key="frame" x="16" y="59" width="343" height="655"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="書く" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-QF-txh">
+                                <rect key="frame" x="16" y="66" width="343" height="648"/>
+                                <autoresizingMask key="autoresizingMask"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="memo"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="0.0"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="twitter"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mts-so-7sN">
-                                <rect key="frame" x="20" y="20" width="81.333333333333329" height="25"/>
+                                <rect key="frame" x="20" y="64" width="81.333333333333329" height="25"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="キャンセル" buttonSize="small">
                                     <color key="baseForegroundColor" systemColor="linkColor"/>
@@ -92,7 +92,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-Ot-rCB">
-                                <rect key="frame" x="273" y="20" width="82" height="31"/>
+                                <rect key="frame" x="273" y="64" width="82" height="31"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="投稿する" cornerStyle="medium">

@@ -9,12 +9,13 @@ import UIKit
 
 class MemoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var img: UIImageView?
+    
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var memo: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        img?.image = UIImage(systemName: "swift")
+        img.image = UIImage(systemName: "swift")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
