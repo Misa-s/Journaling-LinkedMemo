@@ -16,6 +16,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // イニシャライザー的なやつ
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // セルの幅がデバイスによって変わるので画面サイズに合わせる
+        let screenRect = UIScreen.main.bounds
+            tableView.frame = CGRect(x: 0, y: 0, width: screenRect.width, height: screenRect.height)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,26 +28,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // UITableViewを継承するとこれ必須の模様, セルの描画？
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let memoText = memoList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: indexPath)
-        cell.textLabel?.text = memoText
+        
+        let MEMO = 1
+        let DATA_TIME = 2
+        
+        // Cellのメモ
+        let memoLabel = cell.viewWithTag(MEMO) as! UILabel
+        memoLabel.text = memoText
+        
+        // Cellの投稿時間
+        let dataTimeLabel = cell.viewWithTag(DATA_TIME) as! UILabel
+        dataTimeLabel.text = getNowClockString()
+       
         return cell
     }
     
+    func getNowClockString() -> String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd' 'HH:mm"
+            let now = Date()
+            return formatter.string(from: now)
+        }
+    
+    // セルの削除機能
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            memoList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
+    
     // セルがタップされた時の処理
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//
-//        //　タップされたセルの取得
-//        let cell = self.tableView.cellForRow(at:indexPath) as! MemoTableViewCell
-//
-//        let storyboard: UIStoryboard = self.storyboard!
-//        let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! AddModalViewController
-//        modalView.delegate = self
-//
-//        modalView.memo.text = cell.memo.text // modalのメモがnil、なぜ
-//        present(modalView, animated: true, completion: nil)
-//    }
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        tableView.deselectRow(at: indexPath, animated: true)
+    //
+    //        //　タップされたセルの取得
+    //        let cell = self.tableView.cellForRow(at:indexPath) as! MemoTableViewCell
+    //
+    //        let storyboard: UIStoryboard = self.storyboard!
+    //        let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! AddModalViewController
+    //        modalView.delegate = self
+    //
+    //        modalView.memo.text = cell.memo.text // modalのメモがnil、なぜ
+    //        present(modalView, animated: true, completion: nil)
+    //    }
     
     // deletegeでモーダルから呼ばれる
     func addItem(text: String) {

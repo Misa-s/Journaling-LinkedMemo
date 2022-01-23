@@ -27,6 +27,43 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W6I-sV-Slc" id="tjb-7y-zFt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="date time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHF-5b-1jU">
+                                                    <rect key="frame" x="302" y="83" width="57" height="16"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="memo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIr-vY-7Sr">
+                                                    <rect key="frame" x="16" y="47" width="343" height="20.333333333333329"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="memo"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-Nd-9Ym">
+                                                    <rect key="frame" x="313.66666666666669" y="11" width="45.333333333333314" height="31"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system">
+                                                        <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XIr-vY-7Sr" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="BT3-Vr-X8v"/>
+                                                <constraint firstItem="KcF-Nd-9Ym" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="Blk-ER-xff"/>
+                                                <constraint firstItem="XIr-vY-7Sr" firstAttribute="top" secondItem="KcF-Nd-9Ym" secondAttribute="bottom" constant="5" id="MkU-oI-7R1"/>
+                                                <constraint firstItem="ZHF-5b-1jU" firstAttribute="top" secondItem="XIr-vY-7Sr" secondAttribute="bottom" constant="15.67" id="NvS-eb-2WT"/>
+                                                <constraint firstItem="XIr-vY-7Sr" firstAttribute="leading" secondItem="tjb-7y-zFt" secondAttribute="leadingMargin" id="Opo-pP-hkY"/>
+                                                <constraint firstItem="XIr-vY-7Sr" firstAttribute="leading" secondItem="tjb-7y-zFt" secondAttribute="leadingMargin" id="QNG-9a-hUn"/>
+                                                <constraint firstItem="KcF-Nd-9Ym" firstAttribute="trailing" secondItem="XIr-vY-7Sr" secondAttribute="trailing" id="Slz-22-PnC"/>
+                                                <constraint firstItem="XIr-vY-7Sr" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="TKi-9C-ICs"/>
+                                                <constraint firstItem="KcF-Nd-9Ym" firstAttribute="top" secondItem="tjb-7y-zFt" secondAttribute="topMargin" id="TwU-Wg-ZON"/>
+                                                <constraint firstItem="ZHF-5b-1jU" firstAttribute="trailing" secondItem="XIr-vY-7Sr" secondAttribute="trailing" id="huK-Ff-OQP"/>
+                                                <constraint firstItem="ZHF-5b-1jU" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="qBx-Te-aBF"/>
+                                                <constraint firstItem="XIr-vY-7Sr" firstAttribute="top" secondItem="KcF-Nd-9Ym" secondAttribute="bottom" constant="5" id="qoH-9T-pea"/>
+                                                <constraint firstItem="ZHF-5b-1jU" firstAttribute="bottom" secondItem="tjb-7y-zFt" secondAttribute="bottomMargin" id="qwV-t2-7dJ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="memoListCell"/>
                                     </tableViewCell>
@@ -51,7 +88,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="50"/>
+                                        <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -164,6 +201,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
