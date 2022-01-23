@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol PostDelegate: class {
+protocol PostDelegate: AnyObject {
     func addItem(text: String)
 }
 

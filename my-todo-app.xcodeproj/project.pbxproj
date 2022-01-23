@@ -18,8 +18,6 @@
 		003102B127927D6700609070 /* my_todo_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B027927D6700609070 /* my_todo_appUITests.swift */; };
 		003102B327927D6700609070 /* my_todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */; };
 		0065E6482792F81900CB3AE6 /* AddModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065E6472792F81900CB3AE6 /* AddModalViewController.swift */; };
-		006B6C3B2798002B001EBC52 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B6C392798002B001EBC52 /* MemoTableViewCell.swift */; };
-		006B6C3C2798002B001EBC52 /* MemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 006B6C3A2798002B001EBC52 /* MemoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +53,6 @@
 		003102B027927D6700609070 /* my_todo_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITests.swift; sourceTree = "<group>"; };
 		003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* AddModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModalViewController.swift; sourceTree = "<group>"; };
-		006B6C392798002B001EBC52 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
-		006B6C3A2798002B001EBC52 /* MemoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +107,6 @@
 				0031028E27927D6300609070 /* SceneDelegate.swift */,
 				0031029027927D6300609070 /* ViewController.swift */,
 				0031029227927D6300609070 /* Main.storyboard */,
-				006B6C392798002B001EBC52 /* MemoTableViewCell.swift */,
-				006B6C3A2798002B001EBC52 /* MemoTableViewCell.xib */,
 				0031029827927D6700609070 /* Assets.xcassets */,
 				0031029A27927D6700609070 /* LaunchScreen.storyboard */,
 				0031029D27927D6700609070 /* Info.plist */,
@@ -246,7 +240,6 @@
 				0031029C27927D6700609070 /* LaunchScreen.storyboard in Resources */,
 				0031029927927D6700609070 /* Assets.xcassets in Resources */,
 				0031029427927D6300609070 /* Main.storyboard in Resources */,
-				006B6C3C2798002B001EBC52 /* MemoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +265,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0031029127927D6300609070 /* ViewController.swift in Sources */,
-				006B6C3B2798002B001EBC52 /* MemoTableViewCell.swift in Sources */,
 				0031028D27927D6300609070 /* AppDelegate.swift in Sources */,
 				0031028F27927D6300609070 /* SceneDelegate.swift in Sources */,
 				0065E6482792F81900CB3AE6 /* AddModalViewController.swift in Sources */,
