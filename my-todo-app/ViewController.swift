@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBOutlet weak var tableView: UITableView!
-    var memoList = [String]()
+    var memoList = [Memo]()
     
     
     // イニシャライザー的なやつ
@@ -34,7 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // UITableViewを継承するとこれ必須の模様, セルの描画？
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let memoText = memoList[indexPath.row]
+        let memoModel = memoList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: indexPath)
         
         // IndexPathを持たせておく
@@ -42,21 +42,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // Cellのメモ
         let memoLabel = cell.viewWithTag(MEMO) as! UILabel
-        memoLabel.text = memoText
+        memoLabel.text = memoModel.memoText
         
         // Cellの投稿時間
         let dataTimeLabel = cell.viewWithTag(DATA_TIME) as! UILabel
-        dataTimeLabel.text = getNowClockString()
+        dataTimeLabel.text = memoModel.getStrDate()
         
         return cell
     }
     
-    func getNowClockString() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd' 'HH:mm"
-        let now = Date()
-        return formatter.string(from: now)
-    }
+
     
     // セルの削除機能
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -67,8 +62,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // 【新規追加】deletegeでモーダルから呼ばれる
-    func addItem(text: String) {
-        self.memoList.insert(text, at: 0)
+    func addItem(memoModel: Memo) {
+        self.memoList.insert(memoModel, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
     }
     
@@ -84,23 +79,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     // 【編集】deletegeでモーダルから呼ばれる
-    func editItem(text: String, index: Int) {
+    func editItem(memoModel: Memo, index: Int) {
         // 対象のセルを取得
         let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: index))
         
         // Cellのメモ
         let memoLabel = cell?.viewWithTag(MEMO) as! UILabel
-        memoLabel.text = text
+        memoLabel.text = memoModel.memoText
         
         // Cellの投稿時間
         let dataTimeLabel = cell?.viewWithTag(DATA_TIME) as! UILabel
-        dataTimeLabel.text = getNowClockString()
+        dataTimeLabel.text = memoModel.getStrDate()
     }
     
     // 編集モーダルの表示
     @IBAction func openEditModal(_ sender: UIButton) {
-        let idx = sender.tag
-        let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: IndexPath(row: 0, section: idx))
+        let idx = sender.tag // TODO: セルの削除したら死ぬ気がする
         
         let storyboard: UIStoryboard = self.storyboard!
         let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! MemoModalViewController
@@ -108,10 +102,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         modalView.editDelegate = self
         modalView.mode = .edit
         modalView.index = idx
+        modalView.memoModel = memoList[idx]
         
-        // Cellのメモ
-        let memoLabel = cell.viewWithTag(MEMO) as! UILabel
-        modalView.memo?.text = memoLabel.text
         self.present(modalView, animated: true, completion: nil)
     }
 }

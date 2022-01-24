@@ -8,11 +8,11 @@
 import UIKit
 
 protocol AddDelegate: AnyObject {
-    func addItem(text: String)
+    func addItem(memoModel: Memo)
 }
 
 protocol EditDelegate: AnyObject {
-    func editItem(text: String, index: Int)
+    func editItem(memoModel: Memo, index: Int)
 }
 
 enum Mode {
@@ -28,22 +28,26 @@ class MemoModalViewController: UIViewController {
     weak var editDelegate: EditDelegate?
     var mode: Mode = .add
     var index: Int = -1
-    
+    var memoModel: Memo = Memo.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        memo.text = memoModel.memoText
     }
     
     @IBAction func postButton(_ sender: UIButton) {
+        memoModel.memoText = memo!.text
+        memoModel.date_time = Date.now
+        
         if (self.mode == .add) {
             // 追加モード
-            addDelegate?.addItem(text: memo!.text)
+            addDelegate?.addItem(memoModel: memoModel)
             dismiss(animated: true, completion: nil)
             return
         }
         
         // 編集モード
-        editDelegate?.editItem(text: memo!.text, index: self.index)
+        editDelegate?.editItem(memoModel: memoModel, index: self.index)
         dismiss(animated: true, completion: nil)
     }
 
