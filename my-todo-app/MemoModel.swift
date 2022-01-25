@@ -6,11 +6,11 @@
 //
 import Foundation
 
-struct Memo {
+struct MemoModel {
     var id:Int = -1
     var memoText:String = ""
     var date_time:Date = Date.now
-    var nextMemos: [Memo] = []
+    var nextMemos: [MemoModel] = []
     
     func getStrDate() -> String {
         let formatter = DateFormatter()

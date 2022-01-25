@@ -8,11 +8,11 @@
 import UIKit
 
 protocol AddDelegate: AnyObject {
-    func addItem(memoModel: Memo)
+    func addItem(memoModel: MemoModel)
 }
 
 protocol EditDelegate: AnyObject {
-    func editItem(memoModel: Memo, index: Int)
+    func editItem(memoModel: MemoModel, index: Int)
 }
 
 enum Mode {
@@ -28,7 +28,7 @@ class MemoModalViewController: UIViewController {
     weak var editDelegate: EditDelegate?
     var mode: Mode = .add
     var index: Int = -1
-    var memoModel: Memo = Memo.init()
+    var memoModel: MemoModel = MemoModel.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()

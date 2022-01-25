@@ -9,11 +9,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate {
     
-
-    
     
     @IBOutlet weak var tableView: UITableView!
-    var memoList = [Memo]()
+    var memoList = [MemoModel]()
     
     
     // イニシャライザー的なやつ
@@ -62,7 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // 【新規追加】deletegeでモーダルから呼ばれる
-    func addItem(memoModel: Memo) {
+    func addItem(memoModel: MemoModel) {
         self.memoList.insert(memoModel, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
     }
@@ -79,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     // 【編集】deletegeでモーダルから呼ばれる
-    func editItem(memoModel: Memo, index: Int) {
+    func editItem(memoModel: MemoModel, index: Int) {
         // 対象のセルを取得
         let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: index))
         
@@ -102,7 +100,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         modalView.editDelegate = self
         modalView.mode = .edit
         modalView.index = idx
-        modalView.memoModel = memoList[idx]
+        modalView.memoModel = self.memoList[idx]
         
         self.present(modalView, animated: true, completion: nil)
     }
