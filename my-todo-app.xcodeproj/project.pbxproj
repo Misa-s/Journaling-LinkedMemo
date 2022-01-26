@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0026FE9C27A132F00051104B /* Memo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9827A132F00051104B /* Memo+CoreDataClass.swift */; };
+		0026FE9D27A132F00051104B /* Memo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */; };
+		0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */; };
+		0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */; };
 		0031028D27927D6300609070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031028C27927D6300609070 /* AppDelegate.swift */; };
 		0031028F27927D6300609070 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031028E27927D6300609070 /* SceneDelegate.swift */; };
 		0031029127927D6300609070 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031029027927D6300609070 /* ViewController.swift */; };
@@ -19,6 +23,7 @@
 		003102B327927D6700609070 /* my_todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */; };
 		0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */; };
 		00AE2991279E9D08002D3CA3 /* MemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE2990279E9D08002D3CA3 /* MemoModel.swift */; };
+		00FAF2AC27A17035008A23DD /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FAF2AB27A17035008A23DD /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0026FE9827A132F00051104B /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0031028927927D6300609070 /* my-todo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-todo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0031028C27927D6300609070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0031028E27927D6300609070 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +64,7 @@
 		003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalViewController.swift; sourceTree = "<group>"; };
 		00AE2990279E9D08002D3CA3 /* MemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModel.swift; sourceTree = "<group>"; };
+		00FAF2AB27A17035008A23DD /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,7 @@
 		0031028B27927D6300609070 /* my-todo-app */ = {
 			isa = PBXGroup;
 			children = (
+				00FAF2A827A16846008A23DD /* Entities */,
 				0031028C27927D6300609070 /* AppDelegate.swift */,
 				0031028E27927D6300609070 /* SceneDelegate.swift */,
 				0031029027927D6300609070 /* ViewController.swift */,
@@ -134,6 +145,26 @@
 				003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */,
 			);
 			path = "my-todo-appUITests";
+			sourceTree = "<group>";
+		};
+		00FAF2A827A16846008A23DD /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				00FAF2AA27A17019008A23DD /* Controllers */,
+				0026FE9827A132F00051104B /* Memo+CoreDataClass.swift */,
+				0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */,
+				0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */,
+				0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		00FAF2AA27A17019008A23DD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				00FAF2AB27A17035008A23DD /* DataController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +299,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0031029127927D6300609070 /* ViewController.swift in Sources */,
+				0026FE9D27A132F00051104B /* Memo+CoreDataProperties.swift in Sources */,
 				0031028D27927D6300609070 /* AppDelegate.swift in Sources */,
 				0031028F27927D6300609070 /* SceneDelegate.swift in Sources */,
+				0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */,
+				00FAF2AC27A17035008A23DD /* DataController.swift in Sources */,
+				0026FE9C27A132F00051104B /* Memo+CoreDataClass.swift in Sources */,
+				0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */,
 				0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */,
 				0031029727927D6300609070 /* my_todo_app.xcdatamodeld in Sources */,
 				00AE2991279E9D08002D3CA3 /* MemoModel.swift in Sources */,
@@ -454,6 +490,7 @@
 				DEVELOPMENT_TEAM = 3WXYVCR69T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "my-todo-app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = JarnalingMemo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -482,6 +519,7 @@
 				DEVELOPMENT_TEAM = 3WXYVCR69T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "my-todo-app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = JarnalingMemo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

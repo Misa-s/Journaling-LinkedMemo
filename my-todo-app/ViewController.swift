@@ -6,9 +6,9 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate {
-    
     
     @IBOutlet weak var tableView: UITableView!
     var memoList = [MemoModel]()
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-
+    
     
     // セルの削除機能
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -72,6 +72,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         modalView.addDelegate = self
         modalView.editDelegate = self
         modalView.mode = .add // TODO: initで渡したかったが断念、暫定
+        
+//        x
         self.present(modalView, animated: true, completion: nil)
     }
     

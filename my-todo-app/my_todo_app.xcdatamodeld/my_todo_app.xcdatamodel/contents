@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Memo" representedClassName=".Memo" parentEntity="Tag" syncable="YES" codeGenerationType="class">
+    <entity name="Memo" representedClassName=".Memo" parentEntity="Tag" syncable="YES">
         <attribute name="datatime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="image01" optional="YES" attributeType="Binary"/>
         <attribute name="image02" optional="YES" attributeType="Binary"/>
@@ -12,12 +12,12 @@
         <relationship name="relatedMemos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memo" inverseName="relatedMemos" inverseEntity="Memo"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="memos" inverseEntity="Tag"/>
     </entity>
-    <entity name="Tag" representedClassName="Tag" syncable="YES" codeGenerationType="class">
+    <entity name="Tag" representedClassName="Tag" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="memos" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Memo" inverseName="tags" inverseEntity="Memo"/>
     </entity>
     <elements>
-        <element name="Memo" positionX="-63" positionY="-18" width="128" height="14"/>
-        <element name="Tag" positionX="-54" positionY="9" width="128" height="14"/>
+        <element name="Memo" positionX="-63" positionY="-18" width="128" height="179"/>
+        <element name="Tag" positionX="-54" positionY="9" width="128" height="59"/>
     </elements>
 </model>
