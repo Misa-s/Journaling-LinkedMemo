@@ -8,11 +8,11 @@
 import UIKit
 
 protocol AddDelegate: AnyObject {
-    func addItem(memoModel: MemoModel)
+    func addItem(memo: Memo)
 }
 
 protocol EditDelegate: AnyObject {
-    func editItem(memoModel: MemoModel, index: Int)
+    func editItem(memo: Memo, index: Int)
 }
 
 enum Mode {
@@ -20,6 +20,7 @@ enum Mode {
     case edit
 }
 
+/// メモの追加・編集用のモーダル
 class MemoModalViewController: UIViewController {
     
     @IBOutlet weak var memo: UITextView!
@@ -28,26 +29,26 @@ class MemoModalViewController: UIViewController {
     weak var editDelegate: EditDelegate?
     var mode: Mode = .add
     var index: Int = -1
-    var memoModel: MemoModel = MemoModel.init()
+    var memoModel: Memo =  DataManager.newMemo() // TODO: initへ
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        memo.text = memoModel.memoText
+        memo.text = memoModel.memo
     }
     
     @IBAction func postButton(_ sender: UIButton) {
-        memoModel.memoText = memo!.text
-        memoModel.date_time = Date.now
+        memoModel.memo = memo!.text
+        memoModel.datatime = Date.now
         
         if (self.mode == .add) {
             // 追加モード
-            addDelegate?.addItem(memoModel: memoModel)
+            addDelegate?.addItem(memo: memoModel)
             dismiss(animated: true, completion: nil)
             return
         }
         
         // 編集モード
-        editDelegate?.editItem(memoModel: memoModel, index: self.index)
+        editDelegate?.editItem(memo: memoModel, index: self.index)
         dismiss(animated: true, completion: nil)
     }
 

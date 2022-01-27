@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
+///  CoreDataのアクセスを担う
 class DataManager: NSObject {
     
     private static var persistentContainer: NSPersistentCloudKitContainer! = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer

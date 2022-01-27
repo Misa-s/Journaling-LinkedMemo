@@ -11,10 +11,10 @@ import CoreData
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var memoList = [MemoModel]() // DataManager.getMemos()
+    var memoList = DataManager.getMemos()
     
     
-    // イニシャライザー的なやつ
+    /// イニシャライザー的なやつ
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // UITableViewを継承するとこれ必須の模様, セルの描画？
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let memoModel = memoList[indexPath.row]
+        let memo = memoList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: indexPath)
         
         // IndexPathを持たせておく
@@ -40,11 +40,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // Cellのメモ
         let memoLabel = cell.viewWithTag(MEMO) as! UILabel
-        memoLabel.text = memoModel.memoText
+        memoLabel.text = memo.memo
         
         // Cellの投稿時間
         let dataTimeLabel = cell.viewWithTag(DATA_TIME) as! UILabel
-        dataTimeLabel.text = memoModel.getStrDate()
+        dataTimeLabel.text = memo.getStrDate()
         
         return cell
     }
@@ -60,8 +60,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // 【新規追加】deletegeでモーダルから呼ばれる
-    func addItem(memoModel: MemoModel) {
-        self.memoList.insert(memoModel, at: 0)
+    func addItem(memo: Memo) {
+        self.memoList.insert(memo, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
     }
     
@@ -79,17 +79,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     // 【編集】deletegeでモーダルから呼ばれる
-    func editItem(memoModel: MemoModel, index: Int) {
+    func editItem(memo: Memo, index: Int) {
         // 対象のセルを取得
         let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: index))
         
         // Cellのメモ
         let memoLabel = cell?.viewWithTag(MEMO) as! UILabel
-        memoLabel.text = memoModel.memoText
+        memoLabel.text = memo.memo
         
         // Cellの投稿時間
         let dataTimeLabel = cell?.viewWithTag(DATA_TIME) as! UILabel
-        dataTimeLabel.text = memoModel.getStrDate()
+        dataTimeLabel.text = memo.getStrDate()
     }
     
     // 編集モーダルの表示
