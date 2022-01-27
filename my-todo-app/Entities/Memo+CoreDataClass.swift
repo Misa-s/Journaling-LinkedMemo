@@ -11,5 +11,11 @@ import CoreData
 
 
 public class Memo: Tag {
+    
+    func getStrDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd' 'HH:mm"
+        return formatter.string(from: self.datatime!)
+    }
 
 }

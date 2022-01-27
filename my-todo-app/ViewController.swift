@@ -11,7 +11,7 @@ import CoreData
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var memoList = [MemoModel]()
+    var memoList = [MemoModel]() // DataManager.getMemos()
     
     
     // イニシャライザー的なやつ
