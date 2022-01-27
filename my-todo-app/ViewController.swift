@@ -51,21 +51,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    // セルの削除機能
+    /// セルの削除機能
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
+            let memo = self.memoList[indexPath.row]
+            DataManager.delete(entity: memo)
             memoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
         }
     }
     
-    // 【新規追加】deletegeでモーダルから呼ばれる
+    /// 【新規追加】deletegeでモーダルから呼ばれる
     func addItem(memo: Memo) {
         self.memoList.insert(memo, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
     }
     
-    // 新規追加モーダルの表示
+    /// 新規追加モーダルの表示
     @IBAction func openAddModal(_ sender: UIButton) {
         let storyboard: UIStoryboard = self.storyboard!
         let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! MemoModalViewController
@@ -73,12 +75,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         modalView.editDelegate = self
         modalView.mode = .add // TODO: initで渡したかったが断念、暫定
         
-//        x
         self.present(modalView, animated: true, completion: nil)
     }
     
     
-    // 【編集】deletegeでモーダルから呼ばれる
+    /// 【編集】deletegeでモーダルから呼ばれる
     func editItem(memo: Memo, index: Int) {
         // 対象のセルを取得
         let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: index))
@@ -92,7 +93,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         dataTimeLabel.text = memo.getStrDate()
     }
     
-    // 編集モーダルの表示
+    /// 編集モーダルの表示
     @IBAction func openEditModal(_ sender: UIButton) {
         let idx = sender.tag // TODO: セルの削除したら死ぬ気がする
         

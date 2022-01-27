@@ -20,11 +20,7 @@ class DataManager: NSObject {
         return  Memo(entity: entity, insertInto: nil)
     }
     
-    static func insert(entity: NSManagedObject){
-        // TODO: 上手く動くのかしら
-        let context = persistentContainer.viewContext
-        context.insert(entity)
-    }
+    
     
     static func getMemos() -> [Memo] {
         
@@ -40,7 +36,7 @@ class DataManager: NSObject {
         }
     }
     
-    
+    ///
     static func save() {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -51,6 +47,16 @@ class DataManager: NSObject {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    static func delete(entity: NSManagedObject) {
+        let context = persistentContainer.viewContext
+        context.delete(entity)
+    }
+    
+    static func insert(entity: NSManagedObject){
+        let context = persistentContainer.viewContext
+        context.insert(entity)
     }
     
 }
