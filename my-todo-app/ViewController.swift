@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate, EditButtonDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var memoList = DataManager.getMemos()
@@ -33,23 +33,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let memo = memoList[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: indexPath)
-        
-        // IndexPathを持たせておく
-        cell.tag = indexPath.row
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: indexPath) as! MemoTableViewCell
+        cell.delegate = self
+        cell.memo = memo
         // Cellのメモ
-        let memoLabel = cell.viewWithTag(MEMO) as! UILabel
-        memoLabel.text = memo.memo
-        
+        cell.memoLabel.text = memo.memo
         // Cellの投稿時間
-        let dataTimeLabel = cell.viewWithTag(DATA_TIME) as! UILabel
-        dataTimeLabel.text = memo.getStrDate()
+        cell.datetimeLabel.text = memo.getStrDate()
         
         return cell
     }
-    
-    
     
     /// セルの削除機能
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -58,11 +51,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             DataManager.delete(entity: memo)
             memoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            self.tableView.reloadData()
         }
     }
     
     /// 【新規追加】deletegeでモーダルから呼ばれる
-    func addItem(memo: Memo) {
+    func addCell(memo: Memo) {
         self.memoList.insert(memo, at: 0)
         self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.right)
     }
@@ -71,6 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func openAddModal(_ sender: UIButton) {
         let storyboard: UIStoryboard = self.storyboard!
         let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! MemoModalViewController
+        
         modalView.addDelegate = self
         modalView.editDelegate = self
         modalView.mode = .add // TODO: initで渡したかったが断念、暫定
@@ -80,32 +75,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     /// 【編集】deletegeでモーダルから呼ばれる
-    func editItem(memo: Memo, index: Int) {
-        // 対象のセルを取得
-        let cell = self.tableView.cellForRow(at: IndexPath(row: 0, section: index))
-        
+    func editCell(memo: Memo, cell: MemoTableViewCell) {
+        // TODO: ここでする必要あるのか？？？
         // Cellのメモ
-        let memoLabel = cell?.viewWithTag(MEMO) as! UILabel
-        memoLabel.text = memo.memo
+        cell.memoLabel.text = memo.memo
         
         // Cellの投稿時間
-        let dataTimeLabel = cell?.viewWithTag(DATA_TIME) as! UILabel
-        dataTimeLabel.text = memo.getStrDate()
+        cell.datetimeLabel.text = memo.getStrDate()
     }
     
-    /// 編集モーダルの表示
-    @IBAction func openEditModal(_ sender: UIButton) {
-        let idx = sender.tag // TODO: セルの削除したら死ぬ気がする
-        
+    ///
+    func openEditModal(cell: MemoTableViewCell, memo: Memo) {
         let storyboard: UIStoryboard = self.storyboard!
         let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! MemoModalViewController
         modalView.addDelegate = self
         modalView.editDelegate = self
         modalView.mode = .edit
-        modalView.index = idx
-        modalView.memoModel = self.memoList[idx]
+        modalView.memoModel = memo
+        modalView.targetCell = cell
         
         self.present(modalView, animated: true, completion: nil)
     }
+    
 }
 

@@ -8,11 +8,11 @@
 import UIKit
 
 protocol AddDelegate: AnyObject {
-    func addItem(memo: Memo)
+    func addCell(memo: Memo)
 }
 
 protocol EditDelegate: AnyObject {
-    func editItem(memo: Memo, index: Int)
+    func editCell(memo: Memo, cell: MemoTableViewCell)
 }
 
 enum Mode {
@@ -30,9 +30,14 @@ class MemoModalViewController: UIViewController {
     var mode: Mode = .add
     var index: Int = -1
     var memoModel: Memo =  DataManager.newMemo() // TODO: initへ
+    var targetCell: MemoTableViewCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let screenRect = UIScreen.main.bounds
+        memo.frame = CGRect(x: 0, y: 115, width: screenRect.width, height: screenRect.height)
+        
         memo.text = memoModel.memo
     }
     
@@ -42,13 +47,13 @@ class MemoModalViewController: UIViewController {
         
         if (self.mode == .add) {
             // 追加モード
-            addDelegate?.addItem(memo: memoModel)
+            addDelegate?.addCell(memo: memoModel)
             dismiss(animated: true, completion: nil)
             return
         }
         
         // 編集モード
-        editDelegate?.editItem(memo: memoModel, index: self.index)
+        editDelegate?.editCell(memo: memoModel, cell: targetCell!)
         dismiss(animated: true, completion: nil)
     }
 

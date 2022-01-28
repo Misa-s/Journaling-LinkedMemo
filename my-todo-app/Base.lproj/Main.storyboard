@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoListCell" rowHeight="110" id="W6I-sV-Slc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoListCell" rowHeight="110" id="W6I-sV-Slc" customClass="MemoTableViewCell" customModule="my_todo_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W6I-sV-Slc" id="tjb-7y-zFt">
@@ -48,7 +48,7 @@
                                                         <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
-                                                        <action selector="openEditModal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GII-iv-BeO"/>
+                                                        <action selector="openEditModal:" destination="W6I-sV-Slc" eventType="touchUpInside" id="AMM-0y-YF6"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -69,6 +69,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="memoListCell"/>
+                                        <connections>
+                                            <outlet property="datetimeLabel" destination="ZHF-5b-1jU" id="cvv-T3-qd6"/>
+                                            <outlet property="memoLabel" destination="XIr-vY-7Sr" id="OIy-yI-4Qu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -123,15 +127,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="書く" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-QF-txh">
-                                <rect key="frame" x="16" y="66" width="343" height="648"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <accessibility key="accessibilityConfiguration" identifier="memo"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="0.0"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="twitter"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mts-so-7sN">
                                 <rect key="frame" x="20" y="64" width="81.333333333333329" height="25"/>
                                 <state key="normal" title="Button"/>
@@ -153,6 +148,15 @@
                                     <action selector="postButton:" destination="v82-N0-EXB" eventType="touchUpInside" id="Ys1-lO-kw9"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="書く" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-QF-txh">
+                                <rect key="frame" x="16" y="115" width="343" height="648"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="memo"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="0.0"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="twitter"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gsn-Tx-d7f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

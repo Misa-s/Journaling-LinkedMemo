@@ -52,11 +52,13 @@ class DataManager: NSObject {
     static func delete(entity: NSManagedObject) {
         let context = persistentContainer.viewContext
         context.delete(entity)
+        save()
     }
     
     static func insert(entity: NSManagedObject){
         let context = persistentContainer.viewContext
         context.insert(entity)
+        save()
     }
     
 }

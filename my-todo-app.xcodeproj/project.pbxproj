@@ -23,7 +23,7 @@
 		003102B327927D6700609070 /* my_todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */; };
 		0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */; };
 		009955AF27A2969400B9BC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009955AE27A2969400B9BC9E /* DataManager.swift */; };
-		00AE2991279E9D08002D3CA3 /* MemoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AE2990279E9D08002D3CA3 /* MemoModel.swift */; };
+		00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalViewController.swift; sourceTree = "<group>"; };
 		009955AE27A2969400B9BC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		00AE2990279E9D08002D3CA3 /* MemoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModel.swift; sourceTree = "<group>"; };
+		00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +125,7 @@
 				0031029D27927D6700609070 /* Info.plist */,
 				0031029527927D6300609070 /* my_todo_app.xcdatamodeld */,
 				0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */,
-				00AE2990279E9D08002D3CA3 /* MemoModel.swift */,
+				00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */,
 			);
 			path = "my-todo-app";
 			sourceTree = "<group>";
@@ -303,12 +303,12 @@
 				0031028D27927D6300609070 /* AppDelegate.swift in Sources */,
 				0031028F27927D6300609070 /* SceneDelegate.swift in Sources */,
 				0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */,
+				00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */,
 				0026FE9C27A132F00051104B /* Memo+CoreDataClass.swift in Sources */,
 				0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */,
 				0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */,
 				009955AF27A2969400B9BC9E /* DataManager.swift in Sources */,
 				0031029727927D6300609070 /* my_todo_app.xcdatamodeld in Sources */,
-				00AE2991279E9D08002D3CA3 /* MemoModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
