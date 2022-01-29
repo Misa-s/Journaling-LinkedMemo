@@ -36,9 +36,14 @@ class MemoModalViewController: UIViewController {
         super.viewDidLoad()
         
         let screenRect = UIScreen.main.bounds
-        memo.frame = CGRect(x: 0, y: 115, width: screenRect.width, height: screenRect.height)
-        
+        memo.frame = CGRect(x: 0, y: 80, width: screenRect.width, height: screenRect.height)
         memo.text = memoModel.memo
+        
+        let bar = UIToolbar()
+        let reset = UIBarButtonItem(image: UIImage(systemName: "photo"), style: .plain, target: self, action: #selector(test))
+        bar.items = [reset]
+        bar.sizeToFit()
+        memo.inputAccessoryView = bar
     }
     
     @IBAction func postButton(_ sender: UIButton) {
@@ -59,6 +64,10 @@ class MemoModalViewController: UIViewController {
 
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func test() {
+        print("testメソッド実行されたよ")
     }
     
 }
