@@ -15,7 +15,7 @@
 		0031028F27927D6300609070 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031028E27927D6300609070 /* SceneDelegate.swift */; };
 		0031029127927D6300609070 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031029027927D6300609070 /* ViewController.swift */; };
 		0031029427927D6300609070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0031029227927D6300609070 /* Main.storyboard */; };
-		0031029727927D6300609070 /* my_todo_app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0031029527927D6300609070 /* my_todo_app.xcdatamodeld */; };
+		0031029727927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */; };
 		0031029927927D6700609070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0031029827927D6700609070 /* Assets.xcassets */; };
 		0031029C27927D6700609070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0031029A27927D6700609070 /* LaunchScreen.storyboard */; };
 		003102A727927D6700609070 /* my_todo_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102A627927D6700609070 /* my_todo_appTests.swift */; };
@@ -48,7 +48,7 @@
 		0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0031028927927D6300609070 /* my-todo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-todo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0031028927927D6300609070 /* Journaling-LinkedMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journaling-LinkedMemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0031028C27927D6300609070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0031028E27927D6300609070 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0031029027927D6300609070 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,9 +57,9 @@
 		0031029827927D6700609070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0031029B27927D6700609070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0031029D27927D6700609070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		003102A227927D6700609070 /* my-todo-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "my-todo-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		003102A227927D6700609070 /* Journaling-LinkedMemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Journaling-LinkedMemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		003102A627927D6700609070 /* my_todo_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appTests.swift; sourceTree = "<group>"; };
-		003102AC27927D6700609070 /* my-todo-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "my-todo-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		003102AC27927D6700609070 /* Journaling-LinkedMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Journaling-LinkedMemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		003102B027927D6700609070 /* my_todo_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITests.swift; sourceTree = "<group>"; };
 		003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalViewController.swift; sourceTree = "<group>"; };
@@ -95,9 +95,9 @@
 		0031028027927D6300609070 = {
 			isa = PBXGroup;
 			children = (
-				0031028B27927D6300609070 /* my-todo-app */,
-				003102A527927D6700609070 /* my-todo-appTests */,
-				003102AF27927D6700609070 /* my-todo-appUITests */,
+				0031028B27927D6300609070 /* Journaling-LinkedMemo */,
+				003102A527927D6700609070 /* Journaling-LinkedMemo-appTests */,
+				003102AF27927D6700609070 /* Journaling-LinkedMemo-appUITests */,
 				0031028A27927D6300609070 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -105,14 +105,14 @@
 		0031028A27927D6300609070 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0031028927927D6300609070 /* my-todo-app.app */,
-				003102A227927D6700609070 /* my-todo-appTests.xctest */,
-				003102AC27927D6700609070 /* my-todo-appUITests.xctest */,
+				0031028927927D6300609070 /* Journaling-LinkedMemo.app */,
+				003102A227927D6700609070 /* Journaling-LinkedMemoTests.xctest */,
+				003102AC27927D6700609070 /* Journaling-LinkedMemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0031028B27927D6300609070 /* my-todo-app */ = {
+		0031028B27927D6300609070 /* Journaling-LinkedMemo */ = {
 			isa = PBXGroup;
 			children = (
 				00FAF2A827A16846008A23DD /* Entities */,
@@ -123,28 +123,28 @@
 				0031029827927D6700609070 /* Assets.xcassets */,
 				0031029A27927D6700609070 /* LaunchScreen.storyboard */,
 				0031029D27927D6700609070 /* Info.plist */,
-				0031029527927D6300609070 /* my_todo_app.xcdatamodeld */,
+				0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */,
 				0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */,
 				00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */,
 			);
-			path = "my-todo-app";
+			path = "Journaling-LinkedMemo";
 			sourceTree = "<group>";
 		};
-		003102A527927D6700609070 /* my-todo-appTests */ = {
+		003102A527927D6700609070 /* Journaling-LinkedMemo-appTests */ = {
 			isa = PBXGroup;
 			children = (
 				003102A627927D6700609070 /* my_todo_appTests.swift */,
 			);
-			path = "my-todo-appTests";
+			path = "Journaling-LinkedMemo-appTests";
 			sourceTree = "<group>";
 		};
-		003102AF27927D6700609070 /* my-todo-appUITests */ = {
+		003102AF27927D6700609070 /* Journaling-LinkedMemo-appUITests */ = {
 			isa = PBXGroup;
 			children = (
 				003102B027927D6700609070 /* my_todo_appUITests.swift */,
 				003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */,
 			);
-			path = "my-todo-appUITests";
+			path = "Journaling-LinkedMemo-appUITests";
 			sourceTree = "<group>";
 		};
 		00FAF2A827A16846008A23DD /* Entities */ = {
@@ -170,9 +170,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0031028827927D6300609070 /* my-todo-app */ = {
+		0031028827927D6300609070 /* Journaling-LinkedMemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 003102B627927D6700609070 /* Build configuration list for PBXNativeTarget "my-todo-app" */;
+			buildConfigurationList = 003102B627927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemo" */;
 			buildPhases = (
 				0031028527927D6300609070 /* Sources */,
 				0031028627927D6300609070 /* Frameworks */,
@@ -182,14 +182,14 @@
 			);
 			dependencies = (
 			);
-			name = "my-todo-app";
+			name = "Journaling-LinkedMemo";
 			productName = "my-todo-app";
-			productReference = 0031028927927D6300609070 /* my-todo-app.app */;
+			productReference = 0031028927927D6300609070 /* Journaling-LinkedMemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		003102A127927D6700609070 /* my-todo-appTests */ = {
+		003102A127927D6700609070 /* Journaling-LinkedMemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 003102B927927D6700609070 /* Build configuration list for PBXNativeTarget "my-todo-appTests" */;
+			buildConfigurationList = 003102B927927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemoTests" */;
 			buildPhases = (
 				0031029E27927D6700609070 /* Sources */,
 				0031029F27927D6700609070 /* Frameworks */,
@@ -200,14 +200,14 @@
 			dependencies = (
 				003102A427927D6700609070 /* PBXTargetDependency */,
 			);
-			name = "my-todo-appTests";
+			name = "Journaling-LinkedMemoTests";
 			productName = "my-todo-appTests";
-			productReference = 003102A227927D6700609070 /* my-todo-appTests.xctest */;
+			productReference = 003102A227927D6700609070 /* Journaling-LinkedMemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		003102AB27927D6700609070 /* my-todo-appUITests */ = {
+		003102AB27927D6700609070 /* Journaling-LinkedMemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 003102BC27927D6700609070 /* Build configuration list for PBXNativeTarget "my-todo-appUITests" */;
+			buildConfigurationList = 003102BC27927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemoUITests" */;
 			buildPhases = (
 				003102A827927D6700609070 /* Sources */,
 				003102A927927D6700609070 /* Frameworks */,
@@ -218,9 +218,9 @@
 			dependencies = (
 				003102AE27927D6700609070 /* PBXTargetDependency */,
 			);
-			name = "my-todo-appUITests";
+			name = "Journaling-LinkedMemoUITests";
 			productName = "my-todo-appUITests";
-			productReference = 003102AC27927D6700609070 /* my-todo-appUITests.xctest */;
+			productReference = 003102AC27927D6700609070 /* Journaling-LinkedMemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -246,7 +246,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0031028427927D6300609070 /* Build configuration list for PBXProject "my-todo-app" */;
+			buildConfigurationList = 0031028427927D6300609070 /* Build configuration list for PBXProject "Journaling-LinkedMemo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,9 +259,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0031028827927D6300609070 /* my-todo-app */,
-				003102A127927D6700609070 /* my-todo-appTests */,
-				003102AB27927D6700609070 /* my-todo-appUITests */,
+				0031028827927D6300609070 /* Journaling-LinkedMemo */,
+				003102A127927D6700609070 /* Journaling-LinkedMemoTests */,
+				003102AB27927D6700609070 /* Journaling-LinkedMemoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -308,7 +308,7 @@
 				0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */,
 				0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */,
 				009955AF27A2969400B9BC9E /* DataManager.swift in Sources */,
-				0031029727927D6300609070 /* my_todo_app.xcdatamodeld in Sources */,
+				0031029727927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,12 +334,12 @@
 /* Begin PBXTargetDependency section */
 		003102A427927D6700609070 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0031028827927D6300609070 /* my-todo-app */;
+			target = 0031028827927D6300609070 /* Journaling-LinkedMemo */;
 			targetProxy = 003102A327927D6700609070 /* PBXContainerItemProxy */;
 		};
 		003102AE27927D6700609070 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0031028827927D6300609070 /* my-todo-app */;
+			target = 0031028827927D6300609070 /* Journaling-LinkedMemo */;
 			targetProxy = 003102AD27927D6700609070 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -419,7 +419,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = JournalingMindMapMemo;
+				PRODUCT_NAME = JournalingLinkedMemo;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -474,7 +474,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = JournalingMindMapMemo;
+				PRODUCT_NAME = JournalingLinkedMemo;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -491,8 +491,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3WXYVCR69T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "my-todo-app/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = JournalingMindMapMemo;
+				INFOPLIST_FILE = "Journaling-LinkedMemo/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = JournalingLinkedMemo;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -503,7 +504,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.misakishimazaki.Journaling-m3";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.misakishimazaki.Journaling-linked-memo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -520,8 +521,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3WXYVCR69T;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "my-todo-app/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = JournalingMindMapMemo;
+				INFOPLIST_FILE = "Journaling-LinkedMemo/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = JournalingLinkedMemo;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -532,7 +534,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.misakishimazaki.Journaling-m3";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.misakishimazaki.Journaling-linked-memo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -556,7 +558,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/my-todo-app.app/my-todo-app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Journaling-LinkedMemo.app/Journaling-LinkedMemo";
 			};
 			name = Debug;
 		};
@@ -576,7 +578,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/my-todo-app.app/my-todo-app";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Journaling-LinkedMemo.app/Journaling-LinkedMemo";
 			};
 			name = Release;
 		};
@@ -619,7 +621,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0031028427927D6300609070 /* Build configuration list for PBXProject "my-todo-app" */ = {
+		0031028427927D6300609070 /* Build configuration list for PBXProject "Journaling-LinkedMemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				003102B427927D6700609070 /* Debug */,
@@ -628,7 +630,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		003102B627927D6700609070 /* Build configuration list for PBXNativeTarget "my-todo-app" */ = {
+		003102B627927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				003102B727927D6700609070 /* Debug */,
@@ -637,7 +639,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		003102B927927D6700609070 /* Build configuration list for PBXNativeTarget "my-todo-appTests" */ = {
+		003102B927927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				003102BA27927D6700609070 /* Debug */,
@@ -646,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		003102BC27927D6700609070 /* Build configuration list for PBXNativeTarget "my-todo-appUITests" */ = {
+		003102BC27927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				003102BD27927D6700609070 /* Debug */,
@@ -658,13 +660,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0031029527927D6300609070 /* my_todo_app.xcdatamodeld */ = {
+		0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				0031029627927D6300609070 /* my_todo_app.xcdatamodel */,
 			);
 			currentVersion = 0031029627927D6300609070 /* my_todo_app.xcdatamodel */;
-			path = my_todo_app.xcdatamodeld;
+			path = "Journaling-LinkedMemo.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

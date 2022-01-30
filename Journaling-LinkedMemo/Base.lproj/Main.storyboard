@@ -45,7 +45,7 @@
                                                     <rect key="frame" x="313.66666666666669" y="11" width="45.333333333333314" height="31"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system">
-                                                        <color key="baseForegroundColor" systemColor="systemOrangeColor"/>
+                                                        <color key="baseForegroundColor" systemColor="systemTealColor"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="openEditModal:" destination="W6I-sV-Slc" eventType="touchUpInside" id="AMM-0y-YF6"/>
@@ -82,7 +82,7 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhL-NG-Q4O">
                                 <rect key="frame" x="295" y="698" width="60" height="60"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Jge-kz-8vf"/>
                                     <constraint firstAttribute="height" constant="60" id="Uwe-4f-egs"/>
@@ -138,10 +138,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRP-Ot-rCB">
-                                <rect key="frame" x="273" y="64" width="82" height="31"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <rect key="frame" x="302" y="64" width="53" height="31"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="投稿する" cornerStyle="medium">
+                                <buttonConfiguration key="configuration" style="plain" title="投稿" cornerStyle="medium">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -191,10 +191,10 @@
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
                         </navigationBarAppearance>
                         <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
                         </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -220,6 +220,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
