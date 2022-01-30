@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 protocol AddDelegate: AnyObject {
     func addCell(memo: Memo)
@@ -21,7 +22,7 @@ enum Mode {
 }
 
 /// メモの追加・編集用のモーダル
-class MemoModalViewController: UIViewController {
+class MemoModalViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var memo: UITextView!
     
@@ -40,7 +41,7 @@ class MemoModalViewController: UIViewController {
         memo.text = memoModel.memo
         
         let bar = UIToolbar()
-        let reset = UIBarButtonItem(image: UIImage(systemName: "photo"), style: .plain, target: self, action: #selector(test))
+        let reset = UIBarButtonItem(image: UIImage(systemName: "photo"), style: .plain, target: self, action: #selector(openPhotoLibrary))
         bar.items = [reset]
         bar.sizeToFit()
         memo.inputAccessoryView = bar
@@ -61,13 +62,26 @@ class MemoModalViewController: UIViewController {
         editDelegate?.editCell(memo: memoModel, cell: targetCell!)
         dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func test() {
-        print("testメソッド実行されたよ")
+    @objc func openPhotoLibrary() {
+        // カメラロール表示
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .photoLibrary // 「.camera」にすればカメラを起動できる
+        imagePickerController.delegate = self
+        imagePickerController.mediaTypes = ["public.image"]
+        present(imagePickerController,animated: true,completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 選択した写真を取得する
+                let image = info[.originalImage] as! UIImage
+                // ビューに表示する
+                //imageView.image = image
+        print("カメラロールから写真を選択する")
+        picker.dismiss(animated: true)
+    }
 }
