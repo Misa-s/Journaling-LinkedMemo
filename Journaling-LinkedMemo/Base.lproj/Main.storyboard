@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MindMapMemo-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="my_todo_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Journaling_LinkedMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoListCell" rowHeight="110" id="W6I-sV-Slc" customClass="MemoTableViewCell" customModule="my_todo_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoListCell" rowHeight="110" id="W6I-sV-Slc" customClass="MemoTableViewCell" customModule="Journaling_LinkedMemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W6I-sV-Slc" id="tjb-7y-zFt">
@@ -110,7 +110,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jhL-NG-Q4O" secondAttribute="trailing" constant="20" id="8ZV-7R-Nmj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MindMapMemo" id="yon-l0-otz"/>
+                    <navigationItem key="navigationItem" id="yon-l0-otz">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="moon.stars.fill" catalog="system" id="07k-5o-2kW">
+                            <color key="tintColor" systemColor="systemTealColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fr0-gA-9Ae" id="UoY-pZ-Xxy"/>
                     </connections>
@@ -122,7 +126,7 @@
         <!--モーダル-->
         <scene sceneID="msC-kw-yDU">
             <objects>
-                <viewController storyboardIdentifier="modalView" title="モーダル" id="v82-N0-EXB" customClass="MemoModalViewController" customModule="my_todo_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="modalView" title="モーダル" id="v82-N0-EXB" customClass="MemoModalViewController" customModule="Journaling_LinkedMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kLC-d3-Xsy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,7 +191,7 @@
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <color key="tintColor" systemColor="systemOrangeColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="NotoSansOriya" family="Noto Sans Oriya" pointSize="31"/>
+                            <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="31"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
@@ -208,6 +212,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="moon.stars.fill" catalog="system" width="124" height="128"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
