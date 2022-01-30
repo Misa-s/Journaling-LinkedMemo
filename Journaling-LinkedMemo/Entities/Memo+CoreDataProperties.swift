@@ -1,6 +1,6 @@
 //
 //  Memo+CoreDataProperties.swift
-//  my-todo-app
+//  Journaling-LinkedMemo
 //
 //  Created by Misaki Shimazaki on 2022/01/26.
 //

@@ -1,6 +1,6 @@
 //
-//  my_todo_appUITests.swift
-//  my-todo-appUITests
+//  Journaling-LinkedMemoUITests.swift
+//  Journaling-LinkedMemoUITests
 //
 //  Created by Misaki Shimazaki on 2022/01/15.
 //
