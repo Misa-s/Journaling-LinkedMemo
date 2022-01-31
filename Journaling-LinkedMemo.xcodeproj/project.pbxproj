@@ -22,6 +22,9 @@
 		003102B127927D6700609070 /* my_todo_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B027927D6700609070 /* my_todo_appUITests.swift */; };
 		003102B327927D6700609070 /* my_todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */; };
 		0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */; };
+		0082AA4327A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0082AA4027A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf */; };
+		0082AA4427A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0082AA4127A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf */; };
+		0082AA4527A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0082AA4227A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf */; };
 		009955AF27A2969400B9BC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009955AE27A2969400B9BC9E /* DataManager.swift */; };
 		00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -63,7 +66,13 @@
 		003102B027927D6700609070 /* my_todo_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITests.swift; sourceTree = "<group>"; };
 		003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalViewController.swift; sourceTree = "<group>"; };
+		0082AA4027A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Awesome 6 Free-Regular-400.otf"; path = "../../../../../../Downloads/fontawesome-free-6.0.0-beta3-desktop/otfs/Font Awesome 6 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		0082AA4127A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Awesome 6 Brands-Regular-400.otf"; path = "../../../../../../Downloads/fontawesome-free-6.0.0-beta3-desktop/otfs/Font Awesome 6 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		0082AA4227A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Awesome 6 Free-Solid-900.otf"; path = "../../../../../../Downloads/fontawesome-free-6.0.0-beta3-desktop/otfs/Font Awesome 6 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		009955AE27A2969400B9BC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		00A6931827A7EEB20097D3D0 /* Font Awesome 6 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		00A6931927A7EEB20097D3D0 /* Font Awesome 6 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		00A6931A27A7EEB20097D3D0 /* Font Awesome 6 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +124,7 @@
 		0031028B27927D6300609070 /* Journaling-LinkedMemo */ = {
 			isa = PBXGroup;
 			children = (
+				0082AA3B27A7D6A600B88338 /* Fonts */,
 				00FAF2A827A16846008A23DD /* Entities */,
 				0031028C27927D6300609070 /* AppDelegate.swift */,
 				0031028E27927D6300609070 /* SceneDelegate.swift */,
@@ -124,6 +134,9 @@
 				0031029A27927D6700609070 /* LaunchScreen.storyboard */,
 				0031029D27927D6700609070 /* Info.plist */,
 				0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */,
+				00A6931927A7EEB20097D3D0 /* Font Awesome 6 Brands-Regular-400.otf */,
+				00A6931A27A7EEB20097D3D0 /* Font Awesome 6 Free-Regular-400.otf */,
+				00A6931827A7EEB20097D3D0 /* Font Awesome 6 Free-Solid-900.otf */,
 				0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */,
 				00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */,
 			);
@@ -145,6 +158,16 @@
 				003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */,
 			);
 			path = "Journaling-LinkedMemo-appUITests";
+			sourceTree = "<group>";
+		};
+		0082AA3B27A7D6A600B88338 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0082AA4127A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf */,
+				0082AA4027A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf */,
+				0082AA4227A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		00FAF2A827A16846008A23DD /* Entities */ = {
@@ -271,8 +294,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0082AA4527A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf in Resources */,
+				0082AA4427A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf in Resources */,
 				0031029C27927D6700609070 /* LaunchScreen.storyboard in Resources */,
 				0031029927927D6700609070 /* Assets.xcassets in Resources */,
+				0082AA4327A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf in Resources */,
 				0031029427927D6300609070 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@ import CoreData
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate, EditButtonDelegate {
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
     var memoList = DataManager.getMemos()
     
@@ -17,6 +18,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     /// イニシャライザー的なやつ
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(UIFont.familyNames)
+        
+        menuButton.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "FontAwesome6Free-Regular", size: 40)!],
+                                          for: UIControl.State.normal)
+        menuButton.title = "github"
         
         // セルの幅がデバイスによって変わるので画面サイズに合わせる TODO: 横向きにしたとき
         let screenRect = UIScreen.main.bounds

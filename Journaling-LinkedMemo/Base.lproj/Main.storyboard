@@ -111,11 +111,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yon-l0-otz">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="moon.stars.fill" catalog="system" id="07k-5o-2kW">
-                            <color key="tintColor" systemColor="systemTealColor"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="lasso" catalog="system" style="plain" id="07k-5o-2kW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="menuButton" destination="07k-5o-2kW" id="g0V-Nf-Jdv"/>
                         <outlet property="tableView" destination="fr0-gA-9Ae" id="UoY-pZ-Xxy"/>
                     </connections>
                 </viewController>
@@ -212,7 +213,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="moon.stars.fill" catalog="system" width="124" height="128"/>
+        <image name="lasso" catalog="system" width="128" height="118"/>
         <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
