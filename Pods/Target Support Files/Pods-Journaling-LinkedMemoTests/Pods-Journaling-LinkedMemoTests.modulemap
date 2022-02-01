@@ -1,0 +1,6 @@
+framework module Pods_Journaling_LinkedMemoTests {
+  umbrella header "Pods-Journaling-LinkedMemoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

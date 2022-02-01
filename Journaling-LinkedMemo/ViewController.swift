@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FontAwesome_swift
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate, EditButtonDelegate {
     
@@ -19,12 +20,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(UIFont.familyNames)
-        
-        menuButton.setTitleTextAttributes([
-            NSAttributedString.Key.font : UIFont(name: "FontAwesome6Free-Regular", size: 40)!],
-                                          for: UIControl.State.normal)
-        menuButton.title = "github"
+        let attributes = [NSAttributedString.Key.font: UIFont.fontAwesome(ofSize: 25, style: .solid), .foregroundColor : UIColor.white]
+        menuButton.setTitleTextAttributes(attributes, for: .normal)
+        menuButton.title = String.fontAwesomeIcon(name: .bars)
         
         // セルの幅がデバイスによって変わるので画面サイズに合わせる TODO: 横向きにしたとき
         let screenRect = UIScreen.main.bounds

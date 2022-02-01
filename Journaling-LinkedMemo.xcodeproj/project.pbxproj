@@ -22,11 +22,11 @@
 		003102B127927D6700609070 /* my_todo_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B027927D6700609070 /* my_todo_appUITests.swift */; };
 		003102B327927D6700609070 /* my_todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */; };
 		0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */; };
-		0082AA4327A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0082AA4027A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf */; };
-		0082AA4427A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0082AA4127A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf */; };
-		0082AA4527A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0082AA4227A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf */; };
 		009955AF27A2969400B9BC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009955AE27A2969400B9BC9E /* DataManager.swift */; };
 		00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */; };
+		07544CC231E1DA5A84FC1BF5 /* Pods_Journaling_LinkedMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE6192C15823C6BA403E524 /* Pods_Journaling_LinkedMemo.framework */; };
+		45DA566F7120A179555BA98C /* Pods_Journaling_LinkedMemo_Journaling_LinkedMemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCA46A46DAE46C56C7E6CC0 /* Pods_Journaling_LinkedMemo_Journaling_LinkedMemoUITests.framework */; };
+		A3DE8056149DA767B9484672 /* Pods_Journaling_LinkedMemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AAE1CA79CCEB74D268683FF /* Pods_Journaling_LinkedMemoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,14 +66,17 @@
 		003102B027927D6700609070 /* my_todo_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITests.swift; sourceTree = "<group>"; };
 		003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalViewController.swift; sourceTree = "<group>"; };
-		0082AA4027A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Awesome 6 Free-Regular-400.otf"; path = "../../../../../../Downloads/fontawesome-free-6.0.0-beta3-desktop/otfs/Font Awesome 6 Free-Regular-400.otf"; sourceTree = "<group>"; };
-		0082AA4127A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Awesome 6 Brands-Regular-400.otf"; path = "../../../../../../Downloads/fontawesome-free-6.0.0-beta3-desktop/otfs/Font Awesome 6 Brands-Regular-400.otf"; sourceTree = "<group>"; };
-		0082AA4227A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Awesome 6 Free-Solid-900.otf"; path = "../../../../../../Downloads/fontawesome-free-6.0.0-beta3-desktop/otfs/Font Awesome 6 Free-Solid-900.otf"; sourceTree = "<group>"; };
 		009955AE27A2969400B9BC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		00A6931827A7EEB20097D3D0 /* Font Awesome 6 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Free-Solid-900.otf"; sourceTree = "<group>"; };
-		00A6931927A7EEB20097D3D0 /* Font Awesome 6 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Brands-Regular-400.otf"; sourceTree = "<group>"; };
-		00A6931A27A7EEB20097D3D0 /* Font Awesome 6 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Free-Regular-400.otf"; sourceTree = "<group>"; };
 		00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
+		0AE6192C15823C6BA403E524 /* Pods_Journaling_LinkedMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journaling_LinkedMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		394039466564F6536D1EBF19 /* Pods-Journaling-LinkedMemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journaling-LinkedMemoTests.release.xcconfig"; path = "Target Support Files/Pods-Journaling-LinkedMemoTests/Pods-Journaling-LinkedMemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		510C90EE6F15912A317725D4 /* Pods-Journaling-LinkedMemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journaling-LinkedMemo.debug.xcconfig"; path = "Target Support Files/Pods-Journaling-LinkedMemo/Pods-Journaling-LinkedMemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6AAE1CA79CCEB74D268683FF /* Pods_Journaling_LinkedMemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journaling_LinkedMemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72BD06C7A0379CE258E2D8C8 /* Pods-Journaling-LinkedMemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journaling-LinkedMemo.release.xcconfig"; path = "Target Support Files/Pods-Journaling-LinkedMemo/Pods-Journaling-LinkedMemo.release.xcconfig"; sourceTree = "<group>"; };
+		77C02E25D45F632F0AE815EC /* Pods-Journaling-LinkedMemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journaling-LinkedMemoTests.debug.xcconfig"; path = "Target Support Files/Pods-Journaling-LinkedMemoTests/Pods-Journaling-LinkedMemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9422C23CA36CBADD13DA8854 /* Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.release.xcconfig"; path = "Target Support Files/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BB929E5A5C441D055AA62A61 /* Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ECCA46A46DAE46C56C7E6CC0 /* Pods_Journaling_LinkedMemo_Journaling_LinkedMemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journaling_LinkedMemo_Journaling_LinkedMemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07544CC231E1DA5A84FC1BF5 /* Pods_Journaling_LinkedMemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DE8056149DA767B9484672 /* Pods_Journaling_LinkedMemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45DA566F7120A179555BA98C /* Pods_Journaling_LinkedMemo_Journaling_LinkedMemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +114,8 @@
 				003102A527927D6700609070 /* Journaling-LinkedMemo-appTests */,
 				003102AF27927D6700609070 /* Journaling-LinkedMemo-appUITests */,
 				0031028A27927D6300609070 /* Products */,
+				0628147A3832012AEB026B19 /* Pods */,
+				46D13E19DF9A1799C6871538 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,7 +132,6 @@
 		0031028B27927D6300609070 /* Journaling-LinkedMemo */ = {
 			isa = PBXGroup;
 			children = (
-				0082AA3B27A7D6A600B88338 /* Fonts */,
 				00FAF2A827A16846008A23DD /* Entities */,
 				0031028C27927D6300609070 /* AppDelegate.swift */,
 				0031028E27927D6300609070 /* SceneDelegate.swift */,
@@ -134,9 +141,6 @@
 				0031029A27927D6700609070 /* LaunchScreen.storyboard */,
 				0031029D27927D6700609070 /* Info.plist */,
 				0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */,
-				00A6931927A7EEB20097D3D0 /* Font Awesome 6 Brands-Regular-400.otf */,
-				00A6931A27A7EEB20097D3D0 /* Font Awesome 6 Free-Regular-400.otf */,
-				00A6931827A7EEB20097D3D0 /* Font Awesome 6 Free-Solid-900.otf */,
 				0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */,
 				00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */,
 			);
@@ -160,16 +164,6 @@
 			path = "Journaling-LinkedMemo-appUITests";
 			sourceTree = "<group>";
 		};
-		0082AA3B27A7D6A600B88338 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				0082AA4127A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf */,
-				0082AA4027A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf */,
-				0082AA4227A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		00FAF2A827A16846008A23DD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +184,29 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		0628147A3832012AEB026B19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				510C90EE6F15912A317725D4 /* Pods-Journaling-LinkedMemo.debug.xcconfig */,
+				72BD06C7A0379CE258E2D8C8 /* Pods-Journaling-LinkedMemo.release.xcconfig */,
+				BB929E5A5C441D055AA62A61 /* Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.debug.xcconfig */,
+				9422C23CA36CBADD13DA8854 /* Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.release.xcconfig */,
+				77C02E25D45F632F0AE815EC /* Pods-Journaling-LinkedMemoTests.debug.xcconfig */,
+				394039466564F6536D1EBF19 /* Pods-Journaling-LinkedMemoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		46D13E19DF9A1799C6871538 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AE6192C15823C6BA403E524 /* Pods_Journaling_LinkedMemo.framework */,
+				ECCA46A46DAE46C56C7E6CC0 /* Pods_Journaling_LinkedMemo_Journaling_LinkedMemoUITests.framework */,
+				6AAE1CA79CCEB74D268683FF /* Pods_Journaling_LinkedMemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 003102B627927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemo" */;
 			buildPhases = (
+				A61F5534328F62A076B5B8CC /* [CP] Check Pods Manifest.lock */,
 				0031028527927D6300609070 /* Sources */,
 				0031028627927D6300609070 /* Frameworks */,
 				0031028727927D6300609070 /* Resources */,
+				DBAEDF81C867CFC48E129541 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -214,6 +233,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 003102B927927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemoTests" */;
 			buildPhases = (
+				80F76E4053E92D6CFF0267BD /* [CP] Check Pods Manifest.lock */,
 				0031029E27927D6700609070 /* Sources */,
 				0031029F27927D6700609070 /* Frameworks */,
 				003102A027927D6700609070 /* Resources */,
@@ -232,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 003102BC27927D6700609070 /* Build configuration list for PBXNativeTarget "Journaling-LinkedMemoUITests" */;
 			buildPhases = (
+				96934492C91D0110B5CEF264 /* [CP] Check Pods Manifest.lock */,
 				003102A827927D6700609070 /* Sources */,
 				003102A927927D6700609070 /* Frameworks */,
 				003102AA27927D6700609070 /* Resources */,
+				19AB9A8D068A53F949B1E617 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,11 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0082AA4527A7D8D700B88338 /* Font Awesome 6 Free-Solid-900.otf in Resources */,
-				0082AA4427A7D8D700B88338 /* Font Awesome 6 Brands-Regular-400.otf in Resources */,
 				0031029C27927D6700609070 /* LaunchScreen.storyboard in Resources */,
 				0031029927927D6700609070 /* Assets.xcassets in Resources */,
-				0082AA4327A7D8D700B88338 /* Font Awesome 6 Free-Regular-400.otf in Resources */,
 				0031029427927D6300609070 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +337,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19AB9A8D068A53F949B1E617 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80F76E4053E92D6CFF0267BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Journaling-LinkedMemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96934492C91D0110B5CEF264 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A61F5534328F62A076B5B8CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Journaling-LinkedMemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBAEDF81C867CFC48E129541 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Journaling-LinkedMemo/Pods-Journaling-LinkedMemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Journaling-LinkedMemo/Pods-Journaling-LinkedMemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Journaling-LinkedMemo/Pods-Journaling-LinkedMemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0031028527927D6300609070 /* Sources */ = {
@@ -510,6 +632,7 @@
 		};
 		003102B727927D6700609070 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 510C90EE6F15912A317725D4 /* Pods-Journaling-LinkedMemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -540,6 +663,7 @@
 		};
 		003102B827927D6700609070 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72BD06C7A0379CE258E2D8C8 /* Pods-Journaling-LinkedMemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -570,6 +694,7 @@
 		};
 		003102BA27927D6700609070 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77C02E25D45F632F0AE815EC /* Pods-Journaling-LinkedMemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -590,6 +715,7 @@
 		};
 		003102BB27927D6700609070 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 394039466564F6536D1EBF19 /* Pods-Journaling-LinkedMemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -610,6 +736,7 @@
 		};
 		003102BD27927D6700609070 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB929E5A5C441D055AA62A61 /* Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -628,6 +755,7 @@
 		};
 		003102BE27927D6700609070 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9422C23CA36CBADD13DA8854 /* Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

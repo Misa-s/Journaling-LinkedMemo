@@ -6,6 +6,7 @@ target 'Journaling-LinkedMemo' do
   use_frameworks!
 
   # Pods for Journaling-LinkedMemo
+  pod 'FontAwesome.swift'
 
   target 'Journaling-LinkedMemoTests' do
     inherit! :search_paths
