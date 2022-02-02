@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BG0-xO-kFi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iln-Ki-00d">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Journaling_LinkedMemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,12 +41,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-Nd-9Ym">
-                                                    <rect key="frame" x="313.66666666666669" y="11" width="45.333333333333314" height="31"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="pencil.circle" catalog="system">
-                                                        <color key="baseForegroundColor" systemColor="systemTealColor"/>
-                                                    </buttonConfiguration>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-Nd-9Ym">
+                                                    <rect key="frame" x="316.66666666666669" y="11" width="42.333333333333314" height="31"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="Button">
+                                                        <attributedString key="attributedTitle"/>
+                                                    </state>
+                                                    <buttonConfiguration key="configuration" style="plain" image="pencil" catalog="system"/>
                                                     <connections>
                                                         <action selector="openEditModal:" destination="W6I-sV-Slc" eventType="touchUpInside" id="AMM-0y-YF6"/>
                                                     </connections>
@@ -81,7 +82,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhL-NG-Q4O">
-                                <rect key="frame" x="295" y="698" width="60" height="60"/>
+                                <rect key="frame" x="295" y="649" width="60" height="60"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Jge-kz-8vf"/>
@@ -110,8 +111,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jhL-NG-Q4O" secondAttribute="trailing" constant="20" id="8ZV-7R-Nmj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yon-l0-otz">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="07k-5o-2kW">
+                    <navigationItem key="navigationItem" title="Home" id="yon-l0-otz">
+                        <barButtonItem key="leftBarButtonItem" id="07k-5o-2kW">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
@@ -122,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="901.60000000000002" y="72.413793103448285"/>
+            <point key="canvasLocation" x="1844" y="72.413793103448285"/>
         </scene>
         <!--モーダル-->
         <scene sceneID="msC-kw-yDU">
@@ -179,41 +180,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biV-GX-RnJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677.5999999999999" y="88.669950738916256"/>
+            <point key="canvasLocation" x="2620" y="88.669950738916256"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="DKi-Mu-MY0">
+        <!--Item 2-->
+        <scene sceneID="jBv-ax-KU0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BG0-xO-kFi" sceneMemberID="viewController">
+                <viewController id="F6K-D5-Hvn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eAE-6o-vM5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="sb3-ou-cF1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="jZh-Z1-3J3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lzy-FX-rlO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="826"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DzT-Um-lYK">
+            <objects>
+                <tabBarController id="iln-Ki-00d" customClass="TabBarController" customModule="Journaling_LinkedMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Khl-UD-LF2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <outlet property="mainTabbar" destination="Khl-UD-LF2" id="7DF-uU-xMC"/>
+                        <segue destination="doh-cn-VXX" kind="relationship" relationship="viewControllers" id="dzB-15-wc0"/>
+                        <segue destination="F6K-D5-Hvn" kind="relationship" relationship="viewControllers" id="0nM-Jy-zEn"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dVT-Qz-AlG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="406"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="dfS-Xu-F9M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="doh-cn-VXX" customClass="HomeNavigationController" customModule="Journaling_LinkedMemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="S8Y-OI-6cN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lkx-sB-j0h">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LDS-Aq-QS2">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                        <color key="tintColor" systemColor="systemOrangeColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="31"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
-                        <navigationBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" systemColor="systemTealColor"/>
-                        </navigationBarAppearance>
-                        <navigationBarAppearance key="scrollEdgeAppearance">
-                            <color key="backgroundColor" systemColor="systemTealColor"/>
-                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Iwv-qc-N1h"/>
+                        <outlet property="navigationBar" destination="LDS-Aq-QS2" id="3Se-J9-njZ"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jLe-WP-62V"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="13z-ZI-hUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUX-xU-1zX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.2463768115942031" y="72.991071428571431"/>
+            <point key="canvasLocation" x="943" y="72"/>
         </scene>
     </scenes>
     <resources>
-        <image name="pencil.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -222,9 +251,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

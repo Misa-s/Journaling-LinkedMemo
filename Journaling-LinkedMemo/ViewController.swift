@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // メニューバーの設定
         let attributes = [NSAttributedString.Key.font: UIFont.fontAwesome(ofSize: 25, style: .solid), .foregroundColor : UIColor.white]
         menuButton.setTitleTextAttributes(attributes, for: .normal)
         menuButton.title = String.fontAwesomeIcon(name: .bars)

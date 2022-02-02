@@ -78,7 +78,7 @@ class MemoModalViewController: UIViewController, UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // 選択した写真を取得する
-                let image = info[.originalImage] as! UIImage
+//                let image = info[.originalImage] as! UIImage
                 // ビューに表示する
                 //imageView.image = image
         print("カメラロールから写真を選択する")

@@ -23,6 +23,8 @@
 		003102B327927D6700609070 /* my_todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */; };
 		0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */; };
 		009955AF27A2969400B9BC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009955AE27A2969400B9BC9E /* DataManager.swift */; };
+		009D5F5327AA73CA00EBB9F7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D5F5227AA73CA00EBB9F7 /* TabBarController.swift */; };
+		009D5F5527AAB4E400EBB9F7 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D5F5427AAB4E400EBB9F7 /* HomeNavigationController.swift */; };
 		00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */; };
 		07544CC231E1DA5A84FC1BF5 /* Pods_Journaling_LinkedMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE6192C15823C6BA403E524 /* Pods_Journaling_LinkedMemo.framework */; };
 		45DA566F7120A179555BA98C /* Pods_Journaling_LinkedMemo_Journaling_LinkedMemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECCA46A46DAE46C56C7E6CC0 /* Pods_Journaling_LinkedMemo_Journaling_LinkedMemoUITests.framework */; };
@@ -67,6 +69,8 @@
 		003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalViewController.swift; sourceTree = "<group>"; };
 		009955AE27A2969400B9BC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		009D5F5227AA73CA00EBB9F7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		009D5F5427AAB4E400EBB9F7 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewCell.swift; sourceTree = "<group>"; };
 		0AE6192C15823C6BA403E524 /* Pods_Journaling_LinkedMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Journaling_LinkedMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		394039466564F6536D1EBF19 /* Pods-Journaling-LinkedMemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Journaling-LinkedMemoTests.release.xcconfig"; path = "Target Support Files/Pods-Journaling-LinkedMemoTests/Pods-Journaling-LinkedMemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				0031028E27927D6300609070 /* SceneDelegate.swift */,
 				0031029027927D6300609070 /* ViewController.swift */,
 				0031029227927D6300609070 /* Main.storyboard */,
+				009D5F5427AAB4E400EBB9F7 /* HomeNavigationController.swift */,
+				009D5F5227AA73CA00EBB9F7 /* TabBarController.swift */,
 				0031029827927D6700609070 /* Assets.xcassets */,
 				0031029A27927D6700609070 /* LaunchScreen.storyboard */,
 				0031029D27927D6700609070 /* Info.plist */,
@@ -450,11 +456,13 @@
 				0026FE9D27A132F00051104B /* Memo+CoreDataProperties.swift in Sources */,
 				0031028D27927D6300609070 /* AppDelegate.swift in Sources */,
 				0031028F27927D6300609070 /* SceneDelegate.swift in Sources */,
+				009D5F5527AAB4E400EBB9F7 /* HomeNavigationController.swift in Sources */,
 				0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */,
 				00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */,
 				0026FE9C27A132F00051104B /* Memo+CoreDataClass.swift in Sources */,
 				0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */,
 				0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */,
+				009D5F5327AA73CA00EBB9F7 /* TabBarController.swift in Sources */,
 				009955AF27A2969400B9BC9E /* DataManager.swift in Sources */,
 				0031029727927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld in Sources */,
 			);
