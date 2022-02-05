@@ -54,7 +54,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate 
         bar.items = [selectPhoto]
         bar.sizeToFit()
         memo.inputAccessoryView = bar
-        
         memo.keyboardAppearance = .dark; // TODO: 背景モードに依存
     }
     

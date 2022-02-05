@@ -20,6 +20,5 @@ class ImagePickerViewController: DKImagePickerController {
         appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemTeal]
         self.navigationBar.standardAppearance = appearance;
         self.navigationBar.scrollEdgeAppearance = self.navigationBar.standardAppearance
-    
     }
 }
