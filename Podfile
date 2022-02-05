@@ -7,6 +7,7 @@ target 'Journaling-LinkedMemo' do
 
   # Pods for Journaling-LinkedMemo
   pod 'FontAwesome.swift'
+  pod 'DKImagePickerController'
 
   target 'Journaling-LinkedMemoTests' do
     inherit! :search_paths

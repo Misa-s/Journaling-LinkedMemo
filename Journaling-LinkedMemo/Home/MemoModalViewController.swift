@@ -8,6 +8,7 @@
 import UIKit
 import Photos
 import FontAwesome_swift
+import DKImagePickerController
 
 protocol AddDelegate: AnyObject {
     func addCell(memo: Memo)
@@ -23,7 +24,7 @@ enum Mode {
 }
 
 /// メモの追加・編集用のモーダル
-class MemoModalViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class MemoModalViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var memo: UITextView!
@@ -48,9 +49,9 @@ class MemoModalViewController: UIViewController, UIImagePickerControllerDelegate
         
         // keyboardToolBar
         let bar = UIToolbar()
-        let img = UIImage.fontAwesomeIcon(name: .images, style: .solid, textColor: .systemTeal, size: CGSize(width: 20, height: 20))
-        let reset = UIBarButtonItem(image: img, style: .plain, target: self, action: #selector(openPhotoLibrary))
-        bar.items = [reset]
+        let selectPhoto = UIBarButtonItem(image: FontAwesomeImageUtil.selectPhotoForKeyboardToolBar(), style: .plain, target: self, action: #selector(openPhotoLibrary))
+        bar.tintColor = .systemTeal
+        bar.items = [selectPhoto]
         bar.sizeToFit()
         memo.inputAccessoryView = bar
         
@@ -79,19 +80,37 @@ class MemoModalViewController: UIViewController, UIImagePickerControllerDelegate
     
     @objc func openPhotoLibrary() {
         // カメラロール表示
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .photoLibrary // 「.camera」にすればカメラを起動できる
-        imagePickerController.delegate = self
-        imagePickerController.mediaTypes = ["public.image"]
-        present(imagePickerController,animated: true,completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // 選択した写真を取得する
-//                let image = info[.originalImage] as! UIImage
-                // ビューに表示する
-                //imageView.image = image
-        print("カメラロールから写真を選択する")
-        picker.dismiss(animated: true)
+        let pickerController = ImagePickerViewController()
+        pickerController.maxSelectableCount = 6
+        pickerController.sourceType = .photo
+        
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            for asset in assets {
+                asset.fetchFullScreenImage(completeBlock: { (image, info) in
+                    // ここで取り出す（UIImageView（Name:imageView）に選択した画像を表示できるようにしたい）
+                    // imageView.image =
+                })
+                
+            }
+        }
+        
+        self.present(pickerController, animated: true) {}
+//        let imagePicker = OpalImagePickerController()
+//        imagePicker.selectionImage = FontAwesomeImageUtil.checkForImagePicker()
+//
+//        imagePicker.selectionImageTintColor = UIColor.black
+//
+//        imagePicker.maximumSelectionsAllowed = 4
+//        imagePicker.allowedMediaTypes = Set([PHAssetMediaType.image])
+//        imagePicker.imagePickerDelegate = self
+//        present(imagePicker, animated: true, completion: nil)
+        
+        
+        //        let imagePickerController = UIImagePickerController()
+        //        imagePickerController.sourceType = .photoLibrary // 「.camera」にすればカメラを起動できる
+        //        imagePickerController.delegate = self
+        //        imagePickerController.mediaTypes = ["public.image"]
+        //        present(imagePickerController,animated: true,completion: nil)
     }
 }
+

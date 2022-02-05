@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 import FontAwesome_swift
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate, EditButtonDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddDelegate, EditDelegate, EditButtonDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!

@@ -14,7 +14,7 @@
 		0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */; };
 		0031028D27927D6300609070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031028C27927D6300609070 /* AppDelegate.swift */; };
 		0031028F27927D6300609070 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031028E27927D6300609070 /* SceneDelegate.swift */; };
-		0031029127927D6300609070 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031029027927D6300609070 /* ViewController.swift */; };
+		0031029127927D6300609070 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031029027927D6300609070 /* HomeViewController.swift */; };
 		0031029427927D6300609070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0031029227927D6300609070 /* Main.storyboard */; };
 		0031029727927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */; };
 		0031029927927D6700609070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0031029827927D6700609070 /* Assets.xcassets */; };
@@ -22,6 +22,7 @@
 		003102A727927D6700609070 /* my_todo_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102A627927D6700609070 /* my_todo_appTests.swift */; };
 		003102B127927D6700609070 /* my_todo_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B027927D6700609070 /* my_todo_appUITests.swift */; };
 		003102B327927D6700609070 /* my_todo_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */; };
+		00409F5427AEAA57000D4C3D /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00409F5327AEAA57000D4C3D /* ImagePickerDelegate.swift */; };
 		0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */; };
 		009955AF27A2969400B9BC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009955AE27A2969400B9BC9E /* DataManager.swift */; };
 		009D5F5327AA73CA00EBB9F7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D5F5227AA73CA00EBB9F7 /* TabBarController.swift */; };
@@ -58,7 +59,7 @@
 		0031028927927D6300609070 /* Journaling-LinkedMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journaling-LinkedMemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0031028C27927D6300609070 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0031028E27927D6300609070 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0031029027927D6300609070 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0031029027927D6300609070 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0031029327927D6300609070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0031029627927D6300609070 /* my_todo_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = my_todo_app.xcdatamodel; sourceTree = "<group>"; };
 		0031029827927D6700609070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		003102AC27927D6700609070 /* Journaling-LinkedMemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Journaling-LinkedMemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		003102B027927D6700609070 /* my_todo_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITests.swift; sourceTree = "<group>"; };
 		003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_todo_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		00409F5327AEAA57000D4C3D /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalViewController.swift; sourceTree = "<group>"; };
 		009955AE27A2969400B9BC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		009D5F5227AA73CA00EBB9F7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -146,20 +148,17 @@
 		0031028B27927D6300609070 /* Journaling-LinkedMemo */ = {
 			isa = PBXGroup;
 			children = (
+				00409F5227AEA8BF000D4C3D /* Home */,
 				0022476C27AE528C001C2C05 /* Utils */,
 				00FAF2A827A16846008A23DD /* Entities */,
 				0031028C27927D6300609070 /* AppDelegate.swift */,
 				0031028E27927D6300609070 /* SceneDelegate.swift */,
-				0031029027927D6300609070 /* ViewController.swift */,
 				0031029227927D6300609070 /* Main.storyboard */,
-				009D5F5427AAB4E400EBB9F7 /* HomeNavigationController.swift */,
 				009D5F5227AA73CA00EBB9F7 /* TabBarController.swift */,
 				0031029827927D6700609070 /* Assets.xcassets */,
 				0031029A27927D6700609070 /* LaunchScreen.storyboard */,
 				0031029D27927D6700609070 /* Info.plist */,
 				0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */,
-				0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */,
-				00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */,
 			);
 			path = "Journaling-LinkedMemo";
 			sourceTree = "<group>";
@@ -179,6 +178,18 @@
 				003102B227927D6700609070 /* my_todo_appUITestsLaunchTests.swift */,
 			);
 			path = "Journaling-LinkedMemo-appUITests";
+			sourceTree = "<group>";
+		};
+		00409F5227AEA8BF000D4C3D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0031029027927D6300609070 /* HomeViewController.swift */,
+				009D5F5427AAB4E400EBB9F7 /* HomeNavigationController.swift */,
+				0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */,
+				00B402CC27A42E0600CAE088 /* MemoTableViewCell.swift */,
+				00409F5327AEAA57000D4C3D /* ImagePickerDelegate.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		00FAF2A827A16846008A23DD /* Entities */ = {
@@ -463,7 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0031029127927D6300609070 /* ViewController.swift in Sources */,
+				0031029127927D6300609070 /* HomeViewController.swift in Sources */,
 				0026FE9D27A132F00051104B /* Memo+CoreDataProperties.swift in Sources */,
 				0031028D27927D6300609070 /* AppDelegate.swift in Sources */,
 				0031028F27927D6300609070 /* SceneDelegate.swift in Sources */,
@@ -472,6 +483,7 @@
 				0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */,
 				00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */,
 				0026FE9C27A132F00051104B /* Memo+CoreDataClass.swift in Sources */,
+				00409F5427AEAA57000D4C3D /* ImagePickerDelegate.swift in Sources */,
 				0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */,
 				0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */,
 				009D5F5327AA73CA00EBB9F7 /* TabBarController.swift in Sources */,
