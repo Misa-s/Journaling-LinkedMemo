@@ -1,2 +1,8 @@
 ${PODS_ROOT}/Target Support Files/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests/Pods-Journaling-LinkedMemo-Journaling-LinkedMemoUITests-frameworks.sh
-${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework
+${PODS_ROOT}/CropViewController/CropViewController.framework
+${PODS_ROOT}/DKCamera/DKCamera.framework
+${PODS_ROOT}/DKImagePickerController/DKImagePickerController.framework
+${PODS_ROOT}/DKPhotoGallery/DKPhotoGallery.framework
+${PODS_ROOT}/FontAwesome.swift/FontAwesome_swift.framework
+${PODS_ROOT}/SDWebImage/SDWebImage.framework
+${PODS_ROOT}/SwiftyGif/SwiftyGif.framework
