@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+import FontAwesome_swift
 
 protocol AddDelegate: AnyObject {
     func addCell(memo: Memo)
@@ -24,6 +25,7 @@ enum Mode {
 /// メモの追加・編集用のモーダル
 class MemoModalViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var memo: UITextView!
     
     weak var addDelegate: AddDelegate?
@@ -36,15 +38,23 @@ class MemoModalViewController: UIViewController, UIImagePickerControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //
         let screenRect = UIScreen.main.bounds
         memo.frame = CGRect(x: 0, y: 80, width: screenRect.width, height: screenRect.height)
         memo.text = memoModel.memo
         
+        // キャンセルボタン
+        self.cancelButton.setImage(FontAwesomeImageUtil.canselButtonForModal(), for: .normal)
+        
+        // keyboardToolBar
         let bar = UIToolbar()
-        let reset = UIBarButtonItem(image: UIImage(systemName: "photo"), style: .plain, target: self, action: #selector(openPhotoLibrary))
+        let img = UIImage.fontAwesomeIcon(name: .images, style: .solid, textColor: .systemTeal, size: CGSize(width: 20, height: 20))
+        let reset = UIBarButtonItem(image: img, style: .plain, target: self, action: #selector(openPhotoLibrary))
         bar.items = [reset]
         bar.sizeToFit()
         memo.inputAccessoryView = bar
+        
+        memo.keyboardAppearance = .dark; // TODO: 背景モードに依存
     }
     
     @IBAction func postButton(_ sender: UIButton) {

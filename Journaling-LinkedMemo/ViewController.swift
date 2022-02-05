@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
     var memoList = DataManager.getMemos()
     
     
@@ -20,9 +21,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 追加ボタンにアイコンを設定
+        self.addButton.setImage(FontAwesomeImageUtil.addButton(), for: .normal)
         // メニューバーの設定
-        let attributes = [NSAttributedString.Key.font: UIFont.fontAwesome(ofSize: 25, style: .solid), .foregroundColor : UIColor.white]
-        menuButton.setTitleTextAttributes(attributes, for: .normal)
+        menuButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.fontAwesome(ofSize: 25, style: .solid), .foregroundColor : UIColor.white], for: .normal)
+        menuButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.fontAwesome(ofSize: 25, style: .solid), .foregroundColor : UIColor.gray], for: .selected)
         menuButton.title = String.fontAwesomeIcon(name: .bars)
         
         // セルの幅がデバイスによって変わるので画面サイズに合わせる TODO: 横向きにしたとき
@@ -47,6 +50,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.memoLabel.text = memo.memo
         // Cellの投稿時間
         cell.datetimeLabel.text = memo.getStrDate()
+        //
+        cell.editButton.setImage(FontAwesomeImageUtil.editButtonForCell(), for: .normal)
         
         return cell
     }
@@ -91,7 +96,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.datetimeLabel.text = memo.getStrDate()
     }
     
-    ///
+    /// 編集モーダルの表示
     func openEditModal(cell: MemoTableViewCell, memo: Memo) {
         let storyboard: UIStoryboard = self.storyboard!
         let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! MemoModalViewController

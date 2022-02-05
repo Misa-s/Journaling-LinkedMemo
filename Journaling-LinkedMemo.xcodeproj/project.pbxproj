@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0022476E27AE52A8001C2C05 /* FontAwesomeImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022476D27AE52A8001C2C05 /* FontAwesomeImageUtil.swift */; };
 		0026FE9C27A132F00051104B /* Memo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9827A132F00051104B /* Memo+CoreDataClass.swift */; };
 		0026FE9D27A132F00051104B /* Memo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */; };
 		0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0022476D27AE52A8001C2C05 /* FontAwesomeImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesomeImageUtil.swift; sourceTree = "<group>"; };
 		0026FE9827A132F00051104B /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0022476C27AE528C001C2C05 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0022476D27AE52A8001C2C05 /* FontAwesomeImageUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0031028027927D6300609070 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +146,7 @@
 		0031028B27927D6300609070 /* Journaling-LinkedMemo */ = {
 			isa = PBXGroup;
 			children = (
+				0022476C27AE528C001C2C05 /* Utils */,
 				00FAF2A827A16846008A23DD /* Entities */,
 				0031028C27927D6300609070 /* AppDelegate.swift */,
 				0031028E27927D6300609070 /* SceneDelegate.swift */,
@@ -456,6 +467,7 @@
 				0026FE9D27A132F00051104B /* Memo+CoreDataProperties.swift in Sources */,
 				0031028D27927D6300609070 /* AppDelegate.swift in Sources */,
 				0031028F27927D6300609070 /* SceneDelegate.swift in Sources */,
+				0022476E27AE52A8001C2C05 /* FontAwesomeImageUtil.swift in Sources */,
 				009D5F5527AAB4E400EBB9F7 /* HomeNavigationController.swift in Sources */,
 				0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */,
 				00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */,

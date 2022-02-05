@@ -13,6 +13,7 @@ protocol EditButtonDelegate {
 
 class MemoTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var editButton: UIButton!
     var delegate: EditButtonDelegate?
     var memo: Memo?
     

@@ -19,9 +19,9 @@ class TabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.setTabBarItem(index: 0, titile: "Home", image: UIImage.fontAwesomeIcon(name: .home, style: .solid, textColor: .gray, size: CGSize(width: 40, height: 40)), selectedImage: UIImage.fontAwesomeIcon(name: .home, style: .solid, textColor: .systemTeal, size: CGSize(width: 40, height: 40)), offColor: UIColor.gray, onColor: UIColor.systemTeal)
+        self.setTabBarItem(index: 0, titile: "Home", image: FontAwesomeImageUtil.homeForTabItem(mode: .nomal), selectedImage: FontAwesomeImageUtil.homeForTabItem(mode: .selected), offColor: UIColor.gray, onColor: UIColor.systemTeal)
         
-        self.setTabBarItem(index: 1, titile: "Search", image: UIImage.fontAwesomeIcon(name: .search, style: .solid, textColor: .gray, size: CGSize(width: 40, height: 40)), selectedImage: UIImage.fontAwesomeIcon(name: .search, style: .solid, textColor: .systemTeal, size: CGSize(width: 40, height: 40)), offColor: UIColor.gray, onColor: UIColor.systemTeal)
+        self.setTabBarItem(index: 1, titile: "Search", image: FontAwesomeImageUtil.searchForTabItem(mode: .nomal), selectedImage: FontAwesomeImageUtil.searchForTabItem(mode: .selected), offColor: UIColor.gray, onColor: UIColor.systemTeal)
         
         UITabBarItem.appearance().setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 11)], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([.font : UIFont.systemFont(ofSize: 11)], for: .selected)
