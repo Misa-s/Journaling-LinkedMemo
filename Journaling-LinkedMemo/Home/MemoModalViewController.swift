@@ -26,23 +26,38 @@ enum Mode {
 /// メモの追加・編集用のモーダル
 class MemoModalViewController: UIViewController, UINavigationControllerDelegate {
     
+    final var imageViewHeigth: CGFloat = CGFloat(120)
+    final var headerHeight: CGFloat = CGFloat(80)
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var memo: UITextView!
     
     weak var addDelegate: AddDelegate?
     weak var editDelegate: EditDelegate?
     var mode: Mode = .add
-    var index: Int = -1
     var memoModel: Memo =  DataManager.newMemo() // TODO: initへ
     var targetCell: MemoTableViewCell?
+    var images: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //
-        let screenRect = UIScreen.main.bounds
-        memo.frame = CGRect(x: 0, y: 80, width: screenRect.width, height: screenRect.height)
+        // テキスト入力エリアのサイズと位置・値のバインド
+        let screenRect = self.view.bounds
+        let memoHeight = CGFloat(300) // TODO: screenRect.height - headerHeight - imageViewHeigth
+        memo.frame = CGRect(x: 0, y: headerHeight, width: screenRect.width, height: memoHeight)
         memo.text = memoModel.memo
+        
+        // 画像表示エリアのサイズと位置・値のバインド
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal // 横スクロール
+        self.collectionView.collectionViewLayout = layout
+        self.collectionView.frame =  CGRect(x:0,y:(headerHeight + memoHeight ),width:screenRect.width,height:imageViewHeigth)
+        
+        // 画像表示エリアのデリゲートに自身をセット
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         
         // キャンセルボタン
         self.cancelButton.setImage(FontAwesomeImageUtil.canselButtonForModal(), for: .normal)
@@ -82,34 +97,43 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate 
         let pickerController = ImagePickerViewController()
         pickerController.maxSelectableCount = 6
         pickerController.sourceType = .photo
+        images.removeAll()
         
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
             for asset in assets {
-                asset.fetchFullScreenImage(completeBlock: { (image, info) in
-                    // ここで取り出す（UIImageView（Name:imageView）に選択した画像を表示できるようにしたい）
-                    // imageView.image =
-                })
+                asset.fetchFullScreenImage(completeBlock: { (image: UIImage?, info) in
+                    if let img = image {
+                        self.images.append(img)
+                        let indexPath = IndexPath(row: self.images.count - 1, section: 0)
+                        self.collectionView.insertItems(at: [indexPath])
+                    }})
                 
             }
+            self.collectionView.reloadData()
         }
         
         self.present(pickerController, animated: true) {}
-//        let imagePicker = OpalImagePickerController()
-//        imagePicker.selectionImage = FontAwesomeImageUtil.checkForImagePicker()
-//
-//        imagePicker.selectionImageTintColor = UIColor.black
-//
-//        imagePicker.maximumSelectionsAllowed = 4
-//        imagePicker.allowedMediaTypes = Set([PHAssetMediaType.image])
-//        imagePicker.imagePickerDelegate = self
-//        present(imagePicker, animated: true, completion: nil)
-        
-        
-        //        let imagePickerController = UIImagePickerController()
-        //        imagePickerController.sourceType = .photoLibrary // 「.camera」にすればカメラを起動できる
-        //        imagePickerController.delegate = self
-        //        imagePickerController.mediaTypes = ["public.image"]
-        //        present(imagePickerController,animated: true,completion: nil)
     }
 }
 
+extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        self.images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        //コレクションビューから識別子「TestCell」のセルを取得する。
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
+        let imageView = UIImageView(image: self.images[indexPath.row])
+        cell.addSubview(imageView)
+        imageView.sizeToFit()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let horizontalSpace : CGFloat = 10
+        let cellSize : CGFloat = imageViewHeigth - horizontalSpace
+        return CGSize(width: cellSize, height: cellSize)
+    }
+}
