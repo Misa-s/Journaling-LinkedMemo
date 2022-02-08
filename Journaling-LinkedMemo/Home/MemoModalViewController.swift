@@ -127,7 +127,7 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
         let imageView = UIImageView(image: self.images[indexPath.row])
         cell.addSubview(imageView)
-        imageView.sizeToFit()
+        cell.layer.cornerRadius = 10
         return cell
     }
     
