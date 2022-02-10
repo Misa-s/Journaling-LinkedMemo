@@ -113,18 +113,20 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         //        let screenRect = self.view.bounds
         //        let memoHeight = CGFloat(20) // TODO: screenRect.height - headerHeight - imageViewHeigth
         //        self.memo.frame = CGRect(x: 0, y: headerHeight, width: screenRect.width, height: memoHeight)
+        
+        let viewHeight = self.view.bounds.size.height
+        let memoY = 115.0 // self.memo.bounds.origin.y
+        let collectionViewHeight =  self.images.count > 0 ? imageViewHeigth : 0.0
+            
+        print("　Viewの高さ　\(viewHeight)　\n　memoのy　\(memoY)　\n　memoの高さ\(viewHeight - memoY - collectionViewHeight)")
         self.memo.text = memoModel.memo
-        self.memo.maxHeight = 300.0
+        self.memo.maxHeight = viewHeight - (memoY + collectionViewHeight)
         self.memo.minHeight = 20.0
         self.memo.placeholder = "write..."
         self.memo.trimWhiteSpaceWhenEndEditing = false
         self.memo.delegate = self
         
-        
-        // 画像表示エリアのサイズと位置・値のバインド
-        let layout = UICollectionViewFlowLayout()
-        //        self.collectionView.collectionViewLayout = layout
-        //        self.collectionView.frame =  CGRect(x:0,y:(headerHeight + memoHeight ),width:screenRect.width,height:imageViewHeigth)
+        automaticallyAdjustsScrollViewInsets = false
     }
 }
 
@@ -132,13 +134,13 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
         UIView.animate(withDuration: 0.2) {
-            self.view.layoutIfNeeded()
+            self.memo.layoutIfNeeded()
         }
     }
     
     func textViewDidChange(_ textView: UITextView) {
         //nt("テキストが変更された？")
-        print(self.collectionView.layer.frame)
+        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.images.count
@@ -160,5 +162,10 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
         let horizontalSpace : CGFloat = 10
         let cellSize : CGFloat = imageViewHeigth - horizontalSpace
         return CGSize(width: cellSize, height: cellSize)
+    }
+    
+    /// そこら辺をタップするとキーボードを閉じる
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
