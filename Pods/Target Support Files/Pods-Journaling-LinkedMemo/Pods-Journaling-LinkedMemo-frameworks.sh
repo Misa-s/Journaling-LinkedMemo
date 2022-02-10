@@ -196,6 +196,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_ROOT}/DKImagePickerController/DKImagePickerController.framework"
   install_framework "${PODS_ROOT}/DKPhotoGallery/DKPhotoGallery.framework"
   install_framework "${PODS_ROOT}/FontAwesome.swift/FontAwesome_swift.framework"
+  install_framework "${PODS_ROOT}/GrowingTextView/GrowingTextView.framework"
   install_framework "${PODS_ROOT}/SDWebImage/SDWebImage.framework"
   install_framework "${PODS_ROOT}/SwiftyGif/SwiftyGif.framework"
 fi
@@ -205,6 +206,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/DKImagePickerController/DKImagePickerController.framework"
   install_framework "${PODS_ROOT}/DKPhotoGallery/DKPhotoGallery.framework"
   install_framework "${PODS_ROOT}/FontAwesome.swift/FontAwesome_swift.framework"
+  install_framework "${PODS_ROOT}/GrowingTextView/GrowingTextView.framework"
   install_framework "${PODS_ROOT}/SDWebImage/SDWebImage.framework"
   install_framework "${PODS_ROOT}/SwiftyGif/SwiftyGif.framework"
 fi

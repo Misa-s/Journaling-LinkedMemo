@@ -9,6 +9,7 @@ import UIKit
 import Photos
 import FontAwesome_swift
 import DKImagePickerController
+import GrowingTextView
 
 protocol AddDelegate: AnyObject {
     func addCell(memo: Memo)
@@ -24,14 +25,14 @@ enum Mode {
 }
 
 /// メモの追加・編集用のモーダル
-class MemoModalViewController: UIViewController, UINavigationControllerDelegate {
+class MemoModalViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate {
     
     final var imageViewHeigth: CGFloat = CGFloat(120)
     final var headerHeight: CGFloat = CGFloat(80)
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cancelButton: UIButton!
-    @IBOutlet weak var memo: UITextView!
+    @IBOutlet weak var memo: GrowingTextView!
     
     weak var addDelegate: AddDelegate?
     weak var editDelegate: EditDelegate?
@@ -44,17 +45,10 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate 
         super.viewDidLoad()
         
         // テキスト入力エリアのサイズと位置・値のバインド
-        let screenRect = self.view.bounds
-        let memoHeight = CGFloat(300) // TODO: screenRect.height - headerHeight - imageViewHeigth
-        memo.frame = CGRect(x: 0, y: headerHeight, width: screenRect.width, height: memoHeight)
-        memo.text = memoModel.memo
         
-        // 画像表示エリアのサイズと位置・値のバインド
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal // 横スクロール
-        self.collectionView.collectionViewLayout = layout
-        self.collectionView.frame =  CGRect(x:0,y:(headerHeight + memoHeight ),width:screenRect.width,height:imageViewHeigth)
+        setUpPsition()
         
+        //
         // 画像表示エリアのデリゲートに自身をセット
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -114,16 +108,47 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate 
         
         self.present(pickerController, animated: true) {}
     }
+    
+    func setUpPsition() {
+        //        let screenRect = self.view.bounds
+        //        let memoHeight = CGFloat(20) // TODO: screenRect.height - headerHeight - imageViewHeigth
+        //        self.memo.frame = CGRect(x: 0, y: headerHeight, width: screenRect.width, height: memoHeight)
+        self.memo.text = memoModel.memo
+        self.memo.maxHeight = 300.0
+        self.memo.minHeight = 20.0
+        self.memo.placeholder = "write..."
+        self.memo.trimWhiteSpaceWhenEndEditing = false
+        self.memo.delegate = self
+        
+        
+        // 画像表示エリアのサイズと位置・値のバインド
+        let layout = UICollectionViewFlowLayout()
+        //        self.collectionView.collectionViewLayout = layout
+        //        self.collectionView.frame =  CGRect(x:0,y:(headerHeight + memoHeight ),width:screenRect.width,height:imageViewHeigth)
+    }
 }
 
-extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GrowingTextViewDelegate {
     
+    func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        //nt("テキストが変更された？")
+        print(self.collectionView.layer.frame)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //コレクションビューから識別子「TestCell」のセルを取得する。
+        
+        // TODO: ここで動的に位置を変えないといけないのか？？？
+//        CGRect(x: Double, y: Double, width: Double, height: Double)
+
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
         let imageView = UIImageView(image: self.images[indexPath.row])
         cell.addSubview(imageView)

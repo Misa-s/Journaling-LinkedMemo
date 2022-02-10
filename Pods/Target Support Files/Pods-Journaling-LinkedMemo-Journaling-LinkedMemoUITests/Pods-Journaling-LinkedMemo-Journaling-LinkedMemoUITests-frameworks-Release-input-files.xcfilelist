@@ -4,5 +4,6 @@ ${PODS_ROOT}/DKCamera/DKCamera.framework
 ${PODS_ROOT}/DKImagePickerController/DKImagePickerController.framework
 ${PODS_ROOT}/DKPhotoGallery/DKPhotoGallery.framework
 ${PODS_ROOT}/FontAwesome.swift/FontAwesome_swift.framework
+${PODS_ROOT}/GrowingTextView/GrowingTextView.framework
 ${PODS_ROOT}/SDWebImage/SDWebImage.framework
 ${PODS_ROOT}/SwiftyGif/SwiftyGif.framework

@@ -13,6 +13,7 @@ target 'Journaling-LinkedMemo' do
   # Pods for Journaling-LinkedMemo
   pod 'FontAwesome.swift'
   pod 'DKImagePickerController'
+  pod 'GrowingTextView', '0.7.2'
 
   target 'Journaling-LinkedMemoTests' do
     inherit! :search_paths
@@ -25,6 +26,7 @@ target 'Journaling-LinkedMemo' do
 
 end
 
+# cocoa-pods-binaryの不具合暫定対応
 def patch_cocoapods_binary_dsyms(installer)
   installer.generated_projects.each do |project|
     project.targets.each do |target|

@@ -50,6 +50,7 @@ PODS:
     - SDWebImage
     - SwiftyGif
   - FontAwesome.swift (1.9.1)
+  - GrowingTextView (0.7.2)
   - SDWebImage (5.12.3):
     - SDWebImage/Core (= 5.12.3)
   - SDWebImage/Core (5.12.3)
@@ -58,6 +59,7 @@ PODS:
 DEPENDENCIES:
   - DKImagePickerController
   - FontAwesome.swift
+  - GrowingTextView (= 0.7.2)
 
 SPEC REPOS:
   trunk:
@@ -66,6 +68,7 @@ SPEC REPOS:
     - DKImagePickerController
     - DKPhotoGallery
     - FontAwesome.swift
+    - GrowingTextView
     - SDWebImage
     - SwiftyGif
 
@@ -75,9 +78,10 @@ SPEC CHECKSUMS:
   DKImagePickerController: b5eb7f7a388e4643264105d648d01f727110fc3d
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
+  GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
   SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
   SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
 
-PODFILE CHECKSUM: 8223e4f4ad6265c56c7627bb1fac512561f49b55
+PODFILE CHECKSUM: f9da337c2962893bd21d79665692373ca4725131
 
 COCOAPODS: 1.11.2
