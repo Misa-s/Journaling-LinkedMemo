@@ -27,8 +27,9 @@ enum Mode {
 /// メモの追加・編集用のモーダル
 class MemoModalViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate {
     
-    final var imageViewHeigth: CGFloat = CGFloat(120)
-    final var headerHeight: CGFloat = CGFloat(80)
+    final var imageViewHeigth: CGFloat = 120.0
+    final var headerHeight: CGFloat = 80.0
+    final let toolBarHeight: CGFloat = 50.0
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cancelButton: UIButton!
@@ -45,10 +46,14 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
         
         // テキスト入力エリアのサイズと位置・値のバインド
+        self.memo.text = memoModel.memo
+        self.memo.minHeight = 20.0
+        self.memo.placeholder = "write..."
+        self.memo.trimWhiteSpaceWhenEndEditing = false
+        self.memo.delegate = self
+        automaticallyAdjustsScrollViewInsets = false
+        resizeMemo()
         
-        setUpPsition()
-        
-        //
         // 画像表示エリアのデリゲートに自身をセット
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -57,7 +62,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         self.cancelButton.setImage(FontAwesomeImageUtil.canselButtonForModal(), for: .normal)
         
         // keyboardToolBar
-        let bar = UIToolbar()
+        let bar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: toolBarHeight))
         let selectPhoto = UIBarButtonItem(image: FontAwesomeImageUtil.selectPhotoForKeyboardToolBar(), style: .plain, target: self, action: #selector(openPhotoLibrary))
         bar.tintColor = .systemTeal
         bar.items = [selectPhoto]
@@ -85,7 +90,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     @objc func openPhotoLibrary() {
         // カメラロール表示
         let pickerController = ImagePickerViewController()
@@ -109,24 +114,14 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         self.present(pickerController, animated: true) {}
     }
     
-    func setUpPsition() {
-        //        let screenRect = self.view.bounds
-        //        let memoHeight = CGFloat(20) // TODO: screenRect.height - headerHeight - imageViewHeigth
-        //        self.memo.frame = CGRect(x: 0, y: headerHeight, width: screenRect.width, height: memoHeight)
-        
+    /// メモ(UITextView)の高さを再調整する
+    func resizeMemo() {
         let viewHeight = self.view.bounds.size.height
         let memoY = 115.0 // self.memo.bounds.origin.y
         let collectionViewHeight =  self.images.count > 0 ? imageViewHeigth : 0.0
-            
-        print("　Viewの高さ　\(viewHeight)　\n　memoのy　\(memoY)　\n　memoの高さ\(viewHeight - memoY - collectionViewHeight)")
-        self.memo.text = memoModel.memo
-        self.memo.maxHeight = viewHeight - (memoY + collectionViewHeight)
-        self.memo.minHeight = 20.0
-        self.memo.placeholder = "write..."
-        self.memo.trimWhiteSpaceWhenEndEditing = false
-        self.memo.delegate = self
+        let spaces = 30.0
+        self.memo.maxHeight = viewHeight - (memoY + collectionViewHeight + toolBarHeight + spaces)
         
-        automaticallyAdjustsScrollViewInsets = false
     }
 }
 
@@ -147,9 +142,7 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // TODO: ここで動的に位置を変えないといけないのか？？？
-//        CGRect(x: Double, y: Double, width: Double, height: Double)
+        resizeMemo()
 
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
         let imageView = UIImageView(image: self.images[indexPath.row])
