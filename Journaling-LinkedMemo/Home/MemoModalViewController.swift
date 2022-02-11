@@ -53,7 +53,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         self.memo.placeholder = "write..."
         self.memo.trimWhiteSpaceWhenEndEditing = false
         self.memo.delegate = self
-        automaticallyAdjustsScrollViewInsets = false
         resizeMemo()
         
         // 画像表示エリアのデリゲートに自身をセット
@@ -83,7 +82,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
             dismiss(animated: true, completion: nil)
             return
         }
-        
         // 編集モード
         editDelegate?.editCell(memo: memoModel, cell: targetCell!)
         dismiss(animated: true, completion: nil)
@@ -95,7 +93,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
 
     @objc func openPhotoLibrary() {
         // カメラロール表示
-        
         self.pickerController.maxSelectableCount = 6
         self.pickerController.sourceType = .photo
         self.pickerController.showsCancelButton = true
@@ -109,7 +106,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
                         let indexPath = IndexPath(row: self.images.count - 1, section: 0)
                         self.collectionView.insertItems(at: [indexPath])
                     }})
-                
             }
             self.collectionView.reloadData()
         }
@@ -124,23 +120,15 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         let collectionViewHeight =  self.images.count > 0 ? imageViewHeigth : 0.0
         let spaces = 30.0
         self.memo.maxHeight = viewHeight - (memoY + collectionViewHeight + toolBarHeight + spaces)
-        
     }
 }
 
 extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GrowingTextViewDelegate {
     
-    
-    
     func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
         UIView.animate(withDuration: 0.2) {
             self.memo.layoutIfNeeded()
         }
-    }
-    
-    func textViewDidChange(_ textView: UITextView) {
-        //nt("テキストが変更された？")
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
