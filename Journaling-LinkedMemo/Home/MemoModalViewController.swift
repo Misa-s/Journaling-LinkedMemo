@@ -40,6 +40,8 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
     var mode: Mode = .add
     var memoModel: Memo =  DataManager.newMemo() // TODO: initへ
     var targetCell: MemoTableViewCell?
+    var pickerController = ImagePickerViewController()
+    
     var images: [UIImage] = []
     
     override func viewDidLoad() {
@@ -93,12 +95,13 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
 
     @objc func openPhotoLibrary() {
         // カメラロール表示
-        let pickerController = ImagePickerViewController()
-        pickerController.maxSelectableCount = 6
-        pickerController.sourceType = .photo
-        images.removeAll()
         
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+        self.pickerController.maxSelectableCount = 6
+        self.pickerController.sourceType = .photo
+        self.pickerController.showsCancelButton = true
+        
+        self.pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            self.images.removeAll()
             for asset in assets {
                 asset.fetchFullScreenImage(completeBlock: { (image: UIImage?, info) in
                     if let img = image {
@@ -111,7 +114,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
             self.collectionView.reloadData()
         }
         
-        self.present(pickerController, animated: true) {}
+        self.present(self.pickerController, animated: true) {}
     }
     
     /// メモ(UITextView)の高さを再調整する
@@ -127,6 +130,8 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
 
 extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GrowingTextViewDelegate {
     
+    
+    
     func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
         UIView.animate(withDuration: 0.2) {
             self.memo.layoutIfNeeded()
@@ -137,6 +142,7 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
         //nt("テキストが変更された？")
         
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.images.count
     }
@@ -145,7 +151,10 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
         resizeMemo()
 
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
-        let imageView = UIImageView(image: self.images[indexPath.row])
+        
+        let image = self.images[indexPath.row]
+        let imageView = UIImageView(image: image.resized(size: CGSize(width: imageViewHeigth, height: imageViewHeigth)))
+        
         cell.addSubview(imageView)
         cell.layer.cornerRadius = 10
         return cell
