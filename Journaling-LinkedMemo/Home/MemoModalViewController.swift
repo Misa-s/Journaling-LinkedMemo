@@ -58,7 +58,11 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         // 画像表示エリアのデリゲートに自身をセット
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        
+//        for image in self.images {
+//            let indexPath = IndexPath(row: self.images.count - 1, section: 0)
+//            self.collectionView.insertItems(at: [indexPath])
+//        }
+        self.collectionView.reloadData()
         // キャンセルボタン
         self.cancelButton.setImage(FontAwesomeImageUtil.canselButtonForModal(), for: .normal)
         
@@ -86,7 +90,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         if (self.mode == .add) {
             // 追加モード
             DataManager.save()
-//            DataManager.insert(entity: memoModel)
             addDelegate?.addCell(memo: memoModel)
             dismiss(animated: true, completion: nil)
             return
@@ -127,9 +130,11 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         self.images = { () -> [UIImage] in
             var images: [UIImage] = []
             if let orderedSet = memo.images {
-                for data in orderedSet  {
-                    print("UIImageをセット・・・　\(data)")
-                    //                    images.append(UIImage(data: data as! Data))
+                for imageEntity in orderedSet  {
+                    if let uiimage = UIImage(data: (imageEntity as! Image).data!) {
+                        images.append(uiimage)
+                        
+                    }
                 }
                 return images
             }
