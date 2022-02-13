@@ -20,10 +20,13 @@ class DataManager: NSObject {
         return  Memo(entity: entity, insertInto: nil)
     }
     
-    
+    static func newImage() -> Image { // 保存されていない
+        let context = persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Image", in: context)!
+        return  Image(entity: entity, insertInto: nil)
+    }
     
     static func getMemos() -> [Memo] {
-        
         let context = persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Memo")
         
@@ -36,7 +39,7 @@ class DataManager: NSObject {
         }
     }
     
-    ///
+    /// 保存
     static func save() {
         let context = persistentContainer.viewContext
         if context.hasChanges {

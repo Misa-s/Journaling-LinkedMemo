@@ -76,13 +76,23 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         memoModel.memo = memo!.text
         memoModel.datatime = Date.now
         
+        for uiImage in self.images {
+            let imgEntity = DataManager.newImage()
+            imgEntity.data = uiImage.pngData()
+            memoModel.addToImages(imgEntity)
+            //                images.append(imgEntity)
+        }
+        
         if (self.mode == .add) {
             // 追加モード
+            DataManager.save()
+//            DataManager.insert(entity: memoModel)
             addDelegate?.addCell(memo: memoModel)
             dismiss(animated: true, completion: nil)
             return
         }
         // 編集モード
+        DataManager.save()
         editDelegate?.editCell(memo: memoModel, cell: targetCell!)
         dismiss(animated: true, completion: nil)
     }
@@ -90,7 +100,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
+    
     @objc func openPhotoLibrary() {
         // カメラロール表示
         self.pickerController.maxSelectableCount = 6
@@ -111,6 +121,20 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         }
         
         self.present(self.pickerController, animated: true) {}
+    }
+    
+    func setUIImages(memo: Memo){
+        self.images = { () -> [UIImage] in
+            var images: [UIImage] = []
+            if let orderedSet = memo.images {
+                for data in orderedSet  {
+                    print("UIImageをセット・・・　\(data)")
+                    //                    images.append(UIImage(data: data as! Data))
+                }
+                return images
+            }
+            return []
+        }()
     }
     
     /// メモ(UITextView)の高さを再調整する
@@ -137,7 +161,7 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         resizeMemo()
-
+        
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
         
         let image = self.images[indexPath.row]

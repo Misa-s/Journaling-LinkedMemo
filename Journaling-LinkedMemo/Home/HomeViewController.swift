@@ -45,13 +45,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let memo = memoList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: indexPath) as! MemoTableViewCell
         cell.delegate = self
+        //　編集ボタン
+        cell.editButton.setImage(FontAwesomeImageUtil.editButtonForCell(), for: .normal)
         cell.memo = memo
         // Cellのメモ
         cell.memoLabel.text = memo.memo
         // Cellの投稿時間
         cell.datetimeLabel.text = memo.getStrDate()
-        //
-        cell.editButton.setImage(FontAwesomeImageUtil.editButtonForCell(), for: .normal)
+        //　画像の描画
         
         return cell
     }
@@ -94,6 +95,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         // Cellの投稿時間
         cell.datetimeLabel.text = memo.getStrDate()
+        
+        // Cellの画像
     }
     
     /// 編集モーダルの表示
@@ -105,6 +108,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         modalView.mode = .edit
         modalView.memoModel = memo
         modalView.targetCell = cell
+        modalView.setUIImages(memo: memo)
         
         self.present(modalView, animated: true, completion: nil)
     }

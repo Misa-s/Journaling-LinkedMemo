@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Memo" representedClassName=".Memo" parentEntity="Tag" syncable="YES">
+    <entity name="Image" representedClassName="Image" parentEntity="Memo" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+        <relationship name="relatedMemo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Memo" inverseName="images" inverseEntity="Memo"/>
+    </entity>
+    <entity name="Memo" representedClassName=".Memo" syncable="YES">
         <attribute name="datatime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="image01" optional="YES" attributeType="Binary"/>
-        <attribute name="image02" optional="YES" attributeType="Binary"/>
-        <attribute name="image03" optional="YES" attributeType="Binary"/>
-        <attribute name="image04" optional="YES" attributeType="Binary"/>
-        <attribute name="image05" optional="YES" attributeType="Binary"/>
-        <attribute name="image06" optional="YES" attributeType="Binary"/>
         <attribute name="memo" optional="YES" attributeType="String"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Image" inverseName="relatedMemo" inverseEntity="Image"/>
         <relationship name="relatedMemos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Memo" inverseName="relatedMemos" inverseEntity="Memo"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="memos" inverseEntity="Tag"/>
     </entity>
@@ -17,7 +16,8 @@
         <relationship name="memos" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Memo" inverseName="tags" inverseEntity="Memo"/>
     </entity>
     <elements>
-        <element name="Memo" positionX="-63" positionY="-18" width="128" height="179"/>
+        <element name="Memo" positionX="-63" positionY="-18" width="128" height="104"/>
         <element name="Tag" positionX="-54" positionY="9" width="128" height="59"/>
+        <element name="Image" positionX="-27" positionY="54" width="128" height="59"/>
     </elements>
 </model>

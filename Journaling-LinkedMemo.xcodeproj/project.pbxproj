@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000E864727B7E98700A64095 /* Journaling-LinkedMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 000E864527B7E98700A64095 /* Journaling-LinkedMemo.xcdatamodeld */; };
+		000E864A27B7EA3400A64095 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E864827B7EA3400A64095 /* Image+CoreDataClass.swift */; };
+		000E864B27B7EA3400A64095 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E864927B7EA3400A64095 /* Image+CoreDataProperties.swift */; };
+		000E864E27B7EAC800A64095 /* Memo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E864C27B7EAC800A64095 /* Memo+CoreDataClass.swift */; };
+		000E864F27B7EAC800A64095 /* Memo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E864D27B7EAC800A64095 /* Memo+CoreDataProperties.swift */; };
 		0022476E27AE52A8001C2C05 /* FontAwesomeImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022476D27AE52A8001C2C05 /* FontAwesomeImageUtil.swift */; };
-		0026FE9C27A132F00051104B /* Memo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9827A132F00051104B /* Memo+CoreDataClass.swift */; };
-		0026FE9D27A132F00051104B /* Memo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */; };
 		0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */; };
 		0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */; };
 		0031028D27927D6300609070 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031028C27927D6300609070 /* AppDelegate.swift */; };
 		0031028F27927D6300609070 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031028E27927D6300609070 /* SceneDelegate.swift */; };
 		0031029127927D6300609070 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0031029027927D6300609070 /* HomeViewController.swift */; };
 		0031029427927D6300609070 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0031029227927D6300609070 /* Main.storyboard */; };
-		0031029727927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */; };
 		0031029927927D6700609070 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0031029827927D6700609070 /* Assets.xcassets */; };
 		0031029C27927D6700609070 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0031029A27927D6700609070 /* LaunchScreen.storyboard */; };
 		003102A727927D6700609070 /* my_todo_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003102A627927D6700609070 /* my_todo_appTests.swift */; };
@@ -52,9 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000E864627B7E98700A64095 /* my_todo_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = my_todo_app.xcdatamodel; sourceTree = "<group>"; };
+		000E864827B7EA3400A64095 /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
+		000E864927B7EA3400A64095 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		000E864C27B7EAC800A64095 /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		000E864D27B7EAC800A64095 /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0022476D27AE52A8001C2C05 /* FontAwesomeImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesomeImageUtil.swift; sourceTree = "<group>"; };
-		0026FE9827A132F00051104B /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0031028927927D6300609070 /* Journaling-LinkedMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journaling-LinkedMemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +67,6 @@
 		0031028E27927D6300609070 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0031029027927D6300609070 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0031029327927D6300609070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0031029627927D6300609070 /* my_todo_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = my_todo_app.xcdatamodel; sourceTree = "<group>"; };
 		0031029827927D6700609070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0031029B27927D6700609070 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0031029D27927D6700609070 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,7 +165,7 @@
 				0031029827927D6700609070 /* Assets.xcassets */,
 				0031029A27927D6700609070 /* LaunchScreen.storyboard */,
 				0031029D27927D6700609070 /* Info.plist */,
-				0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */,
+				000E864527B7E98700A64095 /* Journaling-LinkedMemo.xcdatamodeld */,
 			);
 			path = "Journaling-LinkedMemo";
 			sourceTree = "<group>";
@@ -199,8 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				00FAF2AA27A17019008A23DD /* Managers */,
-				0026FE9827A132F00051104B /* Memo+CoreDataClass.swift */,
-				0026FE9927A132F00051104B /* Memo+CoreDataProperties.swift */,
+				000E864C27B7EAC800A64095 /* Memo+CoreDataClass.swift */,
+				000E864D27B7EAC800A64095 /* Memo+CoreDataProperties.swift */,
+				000E864827B7EA3400A64095 /* Image+CoreDataClass.swift */,
+				000E864927B7EA3400A64095 /* Image+CoreDataProperties.swift */,
 				0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */,
 				0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */,
 			);
@@ -478,21 +484,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				0031029127927D6300609070 /* HomeViewController.swift in Sources */,
-				0026FE9D27A132F00051104B /* Memo+CoreDataProperties.swift in Sources */,
 				0031028D27927D6300609070 /* AppDelegate.swift in Sources */,
 				0031028F27927D6300609070 /* SceneDelegate.swift in Sources */,
 				0022476E27AE52A8001C2C05 /* FontAwesomeImageUtil.swift in Sources */,
 				009D5F5527AAB4E400EBB9F7 /* HomeNavigationController.swift in Sources */,
+				000E864727B7E98700A64095 /* Journaling-LinkedMemo.xcdatamodeld in Sources */,
+				000E864A27B7EA3400A64095 /* Image+CoreDataClass.swift in Sources */,
 				0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */,
+				000E864B27B7EA3400A64095 /* Image+CoreDataProperties.swift in Sources */,
+				000E864F27B7EAC800A64095 /* Memo+CoreDataProperties.swift in Sources */,
 				00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */,
-				0026FE9C27A132F00051104B /* Memo+CoreDataClass.swift in Sources */,
 				00409F5427AEAA57000D4C3D /* ImagePickerDelegate.swift in Sources */,
 				0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */,
 				0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */,
 				009D5F5327AA73CA00EBB9F7 /* TabBarController.swift in Sources */,
 				009955AF27A2969400B9BC9E /* DataManager.swift in Sources */,
-				0031029727927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld in Sources */,
 				00421E9E27B6C61700846E52 /* UIImageExtension.swift in Sources */,
+				000E864E27B7EAC800A64095 /* Memo+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,12 +858,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0031029527927D6300609070 /* Journaling-LinkedMemo.xcdatamodeld */ = {
+		000E864527B7E98700A64095 /* Journaling-LinkedMemo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0031029627927D6300609070 /* my_todo_app.xcdatamodel */,
+				000E864627B7E98700A64095 /* my_todo_app.xcdatamodel */,
 			);
-			currentVersion = 0031029627927D6300609070 /* my_todo_app.xcdatamodel */;
+			currentVersion = 000E864627B7E98700A64095 /* my_todo_app.xcdatamodel */;
 			path = "Journaling-LinkedMemo.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
