@@ -22,28 +22,28 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoListCell" rowHeight="110" id="W6I-sV-Slc" customClass="MemoTableViewCell" customModule="Journaling_LinkedMemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49" width="375" height="110"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memoListCell" rowHeight="170" id="W6I-sV-Slc" customClass="MemoTableViewCell" customModule="Journaling_LinkedMemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W6I-sV-Slc" id="tjb-7y-zFt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHF-5b-1jU">
-                                                    <rect key="frame" x="302" y="83" width="57" height="16"/>
+                                                    <rect key="frame" x="302" y="159" width="57" height="0.0"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="memo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIr-vY-7Sr">
-                                                    <rect key="frame" x="16" y="47" width="343" height="20.333333333333329"/>
+                                                    <rect key="frame" x="16" y="16" width="343" height="0.0"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="memo"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-Nd-9Ym">
-                                                    <rect key="frame" x="335" y="11" width="24" height="31"/>
+                                                    <rect key="frame" x="335" y="11" width="24" height="0.0"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="Button">
                                                         <attributedString key="attributedTitle"/>
@@ -53,25 +53,53 @@
                                                         <action selector="openEditModal:" destination="W6I-sV-Slc" eventType="touchUpInside" id="AMM-0y-YF6"/>
                                                     </connections>
                                                 </button>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JnD-cl-q3s">
+                                                    <rect key="frame" x="16" y="31" width="343" height="113"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="6qk-57-Ztt"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6fg-Du-cdc">
+                                                        <size key="itemSize" width="114" height="113"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memoListCollectionCell" id="dVO-HG-DYz">
+                                                            <rect key="frame" x="0.0" y="0.0" width="114" height="113"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rE9-eT-cmN">
+                                                                <rect key="frame" x="0.0" y="0.0" width="114" height="113"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="114" height="113"/>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="JnD-cl-q3s" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="4Iy-vg-aa9"/>
                                                 <constraint firstItem="XIr-vY-7Sr" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="BT3-Vr-X8v"/>
                                                 <constraint firstItem="KcF-Nd-9Ym" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="Blk-ER-xff"/>
                                                 <constraint firstItem="XIr-vY-7Sr" firstAttribute="top" secondItem="KcF-Nd-9Ym" secondAttribute="bottom" constant="5" id="MkU-oI-7R1"/>
-                                                <constraint firstItem="ZHF-5b-1jU" firstAttribute="top" secondItem="XIr-vY-7Sr" secondAttribute="bottom" constant="15.67" id="NvS-eb-2WT"/>
+                                                <constraint firstItem="JnD-cl-q3s" firstAttribute="top" secondItem="XIr-vY-7Sr" secondAttribute="bottom" constant="15" id="O7T-MD-5oT"/>
                                                 <constraint firstItem="XIr-vY-7Sr" firstAttribute="leading" secondItem="tjb-7y-zFt" secondAttribute="leadingMargin" id="Opo-pP-hkY"/>
                                                 <constraint firstItem="XIr-vY-7Sr" firstAttribute="leading" secondItem="tjb-7y-zFt" secondAttribute="leadingMargin" id="QNG-9a-hUn"/>
                                                 <constraint firstItem="KcF-Nd-9Ym" firstAttribute="trailing" secondItem="XIr-vY-7Sr" secondAttribute="trailing" id="Slz-22-PnC"/>
                                                 <constraint firstItem="XIr-vY-7Sr" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="TKi-9C-ICs"/>
                                                 <constraint firstItem="KcF-Nd-9Ym" firstAttribute="top" secondItem="tjb-7y-zFt" secondAttribute="topMargin" id="TwU-Wg-ZON"/>
+                                                <constraint firstItem="JnD-cl-q3s" firstAttribute="leading" secondItem="tjb-7y-zFt" secondAttribute="leadingMargin" id="g3G-gn-KLP"/>
                                                 <constraint firstItem="ZHF-5b-1jU" firstAttribute="trailing" secondItem="XIr-vY-7Sr" secondAttribute="trailing" id="huK-Ff-OQP"/>
                                                 <constraint firstItem="ZHF-5b-1jU" firstAttribute="trailing" secondItem="tjb-7y-zFt" secondAttribute="trailingMargin" id="qBx-Te-aBF"/>
                                                 <constraint firstItem="XIr-vY-7Sr" firstAttribute="top" secondItem="KcF-Nd-9Ym" secondAttribute="bottom" constant="5" id="qoH-9T-pea"/>
                                                 <constraint firstItem="ZHF-5b-1jU" firstAttribute="bottom" secondItem="tjb-7y-zFt" secondAttribute="bottomMargin" id="qwV-t2-7dJ"/>
+                                                <constraint firstItem="ZHF-5b-1jU" firstAttribute="top" secondItem="JnD-cl-q3s" secondAttribute="bottom" constant="15" id="ud9-Si-cCs"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="memoListCell"/>
                                         <connections>
+                                            <outlet property="collectionView" destination="JnD-cl-q3s" id="NGp-br-j69"/>
                                             <outlet property="datetimeLabel" destination="ZHF-5b-1jU" id="cvv-T3-qd6"/>
                                             <outlet property="editButton" destination="KcF-Nd-9Ym" id="GpF-0b-bdr"/>
                                             <outlet property="memoLabel" destination="XIr-vY-7Sr" id="OIy-yI-4Qu"/>

@@ -41,19 +41,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     let DATA_TIME = 2
     // UITableViewを継承するとこれ必須の模様, セルの描画？
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let memo = memoList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "memoListCell", for: indexPath) as! MemoTableViewCell
         cell.delegate = self
-        //　編集ボタン
-        cell.editButton.setImage(FontAwesomeImageUtil.editButtonForCell(), for: .normal)
-        cell.memo = memo
-        // Cellのメモ
-        cell.memoLabel.text = memo.memo
-        // Cellの投稿時間
-        cell.datetimeLabel.text = memo.getStrDate()
-        //　画像の描画
-        
+        cell.setFields(for: memoList[indexPath.row])
         return cell
     }
     
@@ -89,14 +79,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     /// 【編集】deletegeでモーダルから呼ばれる
     func editCell(memo: Memo, cell: MemoTableViewCell) {
-        // TODO: ここでする必要あるのか？？？
         // Cellのメモ
         cell.memoLabel.text = memo.memo
-        
         // Cellの投稿時間
         cell.datetimeLabel.text = memo.getStrDate()
         
-        // Cellの画像
     }
     
     /// 編集モーダルの表示

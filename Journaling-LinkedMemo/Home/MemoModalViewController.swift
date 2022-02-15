@@ -58,10 +58,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         // 画像表示エリアのデリゲートに自身をセット
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-//        for image in self.images {
-//            let indexPath = IndexPath(row: self.images.count - 1, section: 0)
-//            self.collectionView.insertItems(at: [indexPath])
-//        }
         self.collectionView.reloadData()
         // キャンセルボタン
         self.cancelButton.setImage(FontAwesomeImageUtil.canselButtonForModal(), for: .normal)
