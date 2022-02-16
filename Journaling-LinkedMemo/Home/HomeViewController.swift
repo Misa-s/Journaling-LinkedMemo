@@ -78,10 +78,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     /// 【編集】deletegeでモーダルから呼ばれる
     func editCell(memo: Memo, cell: MemoTableViewCell) {
-        // Cellのメモ
-        cell.memoLabel.text = memo.memo
-        // Cellの投稿時間
-        cell.datetimeLabel.text = memo.getStrDate()
+        cell.setFields(for: memo) // TODO ここでやる必要あるのか？
     }
     
     /// 編集モーダルの表示
