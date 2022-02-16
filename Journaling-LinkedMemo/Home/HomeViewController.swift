@@ -54,7 +54,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             DataManager.delete(entity: memo)
             memoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
-            self.tableView.reloadData()
         }
     }
     
