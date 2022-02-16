@@ -100,6 +100,7 @@
                                         <accessibility key="accessibilityConfiguration" identifier="memoListCell"/>
                                         <connections>
                                             <outlet property="collectionView" destination="JnD-cl-q3s" id="NGp-br-j69"/>
+                                            <outlet property="collectionViewHeightConstraint" destination="6qk-57-Ztt" id="CrN-e2-QyU"/>
                                             <outlet property="datetimeLabel" destination="ZHF-5b-1jU" id="cvv-T3-qd6"/>
                                             <outlet property="editButton" destination="KcF-Nd-9Ym" id="GpF-0b-bdr"/>
                                             <outlet property="memoLabel" destination="XIr-vY-7Sr" id="OIy-yI-4Qu"/>
@@ -188,8 +189,8 @@
                                     <action selector="postButton:" destination="v82-N0-EXB" eventType="touchUpInside" id="Ys1-lO-kw9"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="interactive" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-QF-txh" customClass="GrowingTextView" customModule="GrowingTextView">
-                                <rect key="frame" x="16" y="115" width="343" height="31"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-QF-txh" customClass="GrowingTextView" customModule="GrowingTextView">
+                                <rect key="frame" x="16" y="115" width="343" height="19"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="0.0"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="twitter" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
@@ -199,7 +200,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sqb-bK-djX">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sqb-bK-djX">
                                 <rect key="frame" x="16" y="154" width="343" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -228,6 +229,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <accessibility key="accessibilityConfiguration" identifier="addModal"/>
                         <constraints>
+                            <constraint firstItem="gsn-Tx-d7f" firstAttribute="bottom" secondItem="sqb-bK-djX" secondAttribute="bottom" constant="504" id="7pE-yY-TCn"/>
                             <constraint firstItem="sqb-bK-djX" firstAttribute="top" secondItem="bZd-QF-txh" secondAttribute="bottom" constant="20" id="9zm-cp-iYB"/>
                             <constraint firstItem="Mts-so-7sN" firstAttribute="leading" secondItem="gsn-Tx-d7f" secondAttribute="leading" constant="20" id="TyW-aW-kqe"/>
                             <constraint firstItem="sqb-bK-djX" firstAttribute="leading" secondItem="gsn-Tx-d7f" secondAttribute="leading" constant="16" id="Ylt-bJ-b2h"/>

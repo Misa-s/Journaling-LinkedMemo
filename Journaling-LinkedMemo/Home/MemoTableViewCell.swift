@@ -15,10 +15,11 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
     private var imageSize: CGFloat = 200.0
     
     @IBOutlet weak var editButton: UIButton!
+    
     var delegate: EditButtonDelegate?
     var memo: Memo?
-//    var collectionView: UICollectionView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHeightConstraint: NSLayoutConstraint!
     
     var images: [UIImage] = []
     
@@ -34,13 +35,12 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         // Cellの投稿時間
         self.datetimeLabel.text = memo.getStrDate()
         //　画像の描画
-        
+        let itemSize: CGFloat = self.collectionView.frame.width / 3
         if let imgs = memo.images {
-            setImages(orderSet: imgs)
-        } else {
-            // 画像がなければ小さくしちゃう
-            self.collectionView.frame = CGRect(x: 0,y: 0,width: 0,height: 0)
+            setImages(orderSet: imgs, itemSize: itemSize)
         }
+        resizeCollectionViewHeight(imageCount: self.images.count, itemSize: itemSize)
+        
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
     }
@@ -50,19 +50,20 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         delegate?.openEditModal(cell: self, memo: self.memo!)
     }
     
-    func setImages(orderSet: NSOrderedSet){
+    func setImages(orderSet: NSOrderedSet, itemSize: CGFloat){
         // CollectionViewのレイアウト
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(
-            width: self.collectionView.frame.width / 2,
-            height: self.collectionView.frame.width / 2
+            width: itemSize,
+            height: itemSize
         )
         flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumLineSpacing = 3
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.collectionView.collectionViewLayout = flowLayout
         
         // 画像を読み込む
+        self.images = []
         for imageEntity in orderSet  {
             if let uiimage = UIImage(data: (imageEntity as! Image).data!) {
                 self.images.append(uiimage)
@@ -71,20 +72,10 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         self.collectionView.reloadData()
     }
     
-//    func createCollectionView(size: CGSize){
-//
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
-//        self.collectionView.dataSource = self
-//
-//        let memoRect: CGRect = self.memoLabel.frame
-//        collectionView.frame = CGRect(x: memoRect.minX,
-//                                      y:memoRect.maxY + 15, // memoエリアとの隙間
-//                                      width: memoRect.maxX - memoRect.minX,
-//                                      height: imageSize
-//        )
-//
-//        self.addSubview(collectionView)
-//    }
+    func resizeCollectionViewHeight(imageCount :Int, itemSize: CGFloat){
+        self.collectionViewHeightConstraint.constant = CGFloat(itemSize) * CGFloat(imageCount / 3 + imageCount % 3)
+    }
+    
 }
 
 extension MemoTableViewCell :UICollectionViewDataSource {

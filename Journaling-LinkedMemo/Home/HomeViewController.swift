@@ -83,7 +83,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.memoLabel.text = memo.memo
         // Cellの投稿時間
         cell.datetimeLabel.text = memo.getStrDate()
-        
     }
     
     /// 編集モーダルの表示

@@ -80,7 +80,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
             let imgEntity = DataManager.newImage()
             imgEntity.data = uiImage.pngData()
             memoModel.addToImages(imgEntity)
-            //                images.append(imgEntity)
         }
         
         if (self.mode == .add) {
@@ -136,8 +135,9 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
             }
             return []
         }()
+
     }
-    
+
     /// メモ(UITextView)の高さを再調整する
     func resizeMemo() {
         let viewHeight = self.view.bounds.size.height
