@@ -10,8 +10,6 @@
 		000E864727B7E98700A64095 /* Journaling-LinkedMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 000E864527B7E98700A64095 /* Journaling-LinkedMemo.xcdatamodeld */; };
 		000E864A27B7EA3400A64095 /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E864827B7EA3400A64095 /* Image+CoreDataClass.swift */; };
 		000E864B27B7EA3400A64095 /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E864927B7EA3400A64095 /* Image+CoreDataProperties.swift */; };
-		000E864E27B7EAC800A64095 /* Memo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E864C27B7EAC800A64095 /* Memo+CoreDataClass.swift */; };
-		000E864F27B7EAC800A64095 /* Memo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000E864D27B7EAC800A64095 /* Memo+CoreDataProperties.swift */; };
 		0022476E27AE52A8001C2C05 /* FontAwesomeImageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0022476D27AE52A8001C2C05 /* FontAwesomeImageUtil.swift */; };
 		0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */; };
 		0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */; };
@@ -27,6 +25,8 @@
 		00409F5427AEAA57000D4C3D /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00409F5327AEAA57000D4C3D /* ImagePickerDelegate.swift */; };
 		00421E9E27B6C61700846E52 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00421E9D27B6C61600846E52 /* UIImageExtension.swift */; };
 		0065E6482792F81900CB3AE6 /* MemoModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */; };
+		008D3F5927BFD54E00D832BF /* Memo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D3F5727BFD54E00D832BF /* Memo+CoreDataClass.swift */; };
+		008D3F5A27BFD54E00D832BF /* Memo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008D3F5827BFD54E00D832BF /* Memo+CoreDataProperties.swift */; };
 		009955AF27A2969400B9BC9E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009955AE27A2969400B9BC9E /* DataManager.swift */; };
 		009D5F5327AA73CA00EBB9F7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D5F5227AA73CA00EBB9F7 /* TabBarController.swift */; };
 		009D5F5527AAB4E400EBB9F7 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D5F5427AAB4E400EBB9F7 /* HomeNavigationController.swift */; };
@@ -57,8 +57,6 @@
 		000E864627B7E98700A64095 /* my_todo_app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = my_todo_app.xcdatamodel; sourceTree = "<group>"; };
 		000E864827B7EA3400A64095 /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
 		000E864927B7EA3400A64095 /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		000E864C27B7EAC800A64095 /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		000E864D27B7EAC800A64095 /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0022476D27AE52A8001C2C05 /* FontAwesomeImageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesomeImageUtil.swift; sourceTree = "<group>"; };
 		0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0026FE9B27A132F00051104B /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -78,6 +76,8 @@
 		00409F5327AEAA57000D4C3D /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 		00421E9D27B6C61600846E52 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		0065E6472792F81900CB3AE6 /* MemoModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoModalViewController.swift; sourceTree = "<group>"; };
+		008D3F5727BFD54E00D832BF /* Memo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		008D3F5827BFD54E00D832BF /* Memo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Memo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		009955AE27A2969400B9BC9E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		009D5F5227AA73CA00EBB9F7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		009D5F5427AAB4E400EBB9F7 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
@@ -202,9 +202,9 @@
 		00FAF2A827A16846008A23DD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				008D3F5727BFD54E00D832BF /* Memo+CoreDataClass.swift */,
+				008D3F5827BFD54E00D832BF /* Memo+CoreDataProperties.swift */,
 				00FAF2AA27A17019008A23DD /* Managers */,
-				000E864C27B7EAC800A64095 /* Memo+CoreDataClass.swift */,
-				000E864D27B7EAC800A64095 /* Memo+CoreDataProperties.swift */,
 				000E864827B7EA3400A64095 /* Image+CoreDataClass.swift */,
 				000E864927B7EA3400A64095 /* Image+CoreDataProperties.swift */,
 				0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */,
@@ -492,7 +492,7 @@
 				000E864A27B7EA3400A64095 /* Image+CoreDataClass.swift in Sources */,
 				0026FE9E27A132F00051104B /* Tag+CoreDataClass.swift in Sources */,
 				000E864B27B7EA3400A64095 /* Image+CoreDataProperties.swift in Sources */,
-				000E864F27B7EAC800A64095 /* Memo+CoreDataProperties.swift in Sources */,
+				008D3F5A27BFD54E00D832BF /* Memo+CoreDataProperties.swift in Sources */,
 				00B402CD27A42E0600CAE088 /* MemoTableViewCell.swift in Sources */,
 				00409F5427AEAA57000D4C3D /* ImagePickerDelegate.swift in Sources */,
 				0026FE9F27A132F00051104B /* Tag+CoreDataProperties.swift in Sources */,
@@ -500,7 +500,7 @@
 				009D5F5327AA73CA00EBB9F7 /* TabBarController.swift in Sources */,
 				009955AF27A2969400B9BC9E /* DataManager.swift in Sources */,
 				00421E9E27B6C61700846E52 /* UIImageExtension.swift in Sources */,
-				000E864E27B7EAC800A64095 /* Memo+CoreDataClass.swift in Sources */,
+				008D3F5927BFD54E00D832BF /* Memo+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

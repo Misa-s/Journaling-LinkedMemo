@@ -50,7 +50,7 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         delegate?.openEditModal(cell: self, memo: self.memo!)
     }
     
-    func setImages(orderSet: NSOrderedSet, itemSize: CGFloat){
+    func setImages(orderSet: NSSet, itemSize: CGFloat){
         // CollectionViewのレイアウト
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(
