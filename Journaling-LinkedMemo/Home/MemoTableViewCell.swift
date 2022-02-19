@@ -12,8 +12,6 @@ protocol EditButtonDelegate {
 }
 
 class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
-    private var imageSize: CGFloat = 200.0
-    
     @IBOutlet weak var editButton: UIButton!
     
     var delegate: EditButtonDelegate?
@@ -35,11 +33,11 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         // Cellの投稿時間
         self.datetimeLabel.text = memo.getStrDate()
         //　画像の描画
-        let itemSize: CGFloat = self.collectionView.frame.width / 3
+        
         if let imgs = memo.images {
-            setImages(orderSet: imgs, itemSize: itemSize)
+            setImages(orderSet: imgs)
         }
-        resizeCollectionViewHeight(imageCount: self.images.count, itemSize: itemSize)
+        resizeCollectionViewHeight(imageCount: self.images.count)
         
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -50,7 +48,8 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         delegate?.openEditModal(cell: self, memo: self.memo!)
     }
     
-    func setImages(orderSet: NSSet, itemSize: CGFloat){
+    func setImages(orderSet: NSSet){
+        let itemSize  = getImageSize()
         // CollectionViewのレイアウト
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(
@@ -72,14 +71,21 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         self.collectionView.reloadData()
     }
     
-    func resizeCollectionViewHeight(imageCount :Int, itemSize: CGFloat){
-        self.collectionViewHeightConstraint.constant = CGFloat(itemSize) * CGFloat(imageCount / 3 + imageCount % 3)
+    func resizeCollectionViewHeight(imageCount :Int){
+        self.collectionViewHeightConstraint.constant = CGFloat(getImageSize()) * CGFloat(imageCount / 2 + imageCount % 2)
+    }
+    
+    func getImageSize() -> CGFloat {
+        return self.collectionView.frame.width / 2
     }
     
 }
 
 extension MemoTableViewCell :UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    /// CollectionViewのCell追加
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) ->
+    UICollectionViewCell {
+        let imageSize  = getImageSize()
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memoListCollectionCell", for: indexPath)
         let image = self.images[indexPath.row]
         let imageView = UIImageView(image: image.resized(size: CGSize(width: imageSize, height: imageSize)))
@@ -87,7 +93,6 @@ extension MemoTableViewCell :UICollectionViewDataSource {
         cell.addSubview(imageView)
         cell.layer.cornerRadius = 10
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

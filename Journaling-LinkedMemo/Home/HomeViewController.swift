@@ -78,6 +78,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     /// 【編集】deletegeでモーダルから呼ばれる
     func editCell(memo: Memo, cell: MemoTableViewCell) {
+        // MemoListの更新は？
         cell.setFields(for: memo) // TODO ここでやる必要あるのか？
     }
     
