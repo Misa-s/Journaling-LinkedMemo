@@ -202,9 +202,9 @@
 		00FAF2A827A16846008A23DD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				00FAF2AA27A17019008A23DD /* Managers */,
 				008D3F5727BFD54E00D832BF /* Memo+CoreDataClass.swift */,
 				008D3F5827BFD54E00D832BF /* Memo+CoreDataProperties.swift */,
-				00FAF2AA27A17019008A23DD /* Managers */,
 				000E864827B7EA3400A64095 /* Image+CoreDataClass.swift */,
 				000E864927B7EA3400A64095 /* Image+CoreDataProperties.swift */,
 				0026FE9A27A132F00051104B /* Tag+CoreDataClass.swift */,

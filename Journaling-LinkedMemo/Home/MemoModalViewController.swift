@@ -51,6 +51,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         self.memo.text = memoModel.memo
         self.memo.minHeight = 20.0
         self.memo.placeholder = "write..."
+        self.memo.backgroundColor = .white
         self.memo.trimWhiteSpaceWhenEndEditing = false
         self.memo.delegate = self
         resizeMemo()

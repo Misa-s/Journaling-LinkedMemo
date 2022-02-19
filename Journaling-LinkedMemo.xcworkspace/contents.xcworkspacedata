@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Journaling-LinkedMemo/Entities/../../Memo+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Journaling-LinkedMemo/Entities/../../Memo+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:Journaling-LinkedMemo.xcodeproj">
    </FileRef>
    <FileRef
