@@ -16,7 +16,7 @@ protocol AddDelegate: AnyObject {
 }
 
 protocol EditDelegate: AnyObject {
-    func editCell(memo: Memo, cell: MemoTableViewCell)
+    func editCell(memo: Memo, indexPath: IndexPath)
 }
 
 enum Mode {
@@ -39,7 +39,8 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
     weak var editDelegate: EditDelegate?
     var mode: Mode = .add
     var memoModel: Memo =  DataManager.newMemo() // TODO: initへ
-    var targetCell: MemoTableViewCell?
+//    var targetCell: MemoTableViewCell?
+    var targetCellIndexPath: IndexPath?
     var pickerController = ImagePickerViewController()
     
     var images: [UIImage] = []
@@ -92,7 +93,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         }
         // 編集モード
         DataManager.save()
-        editDelegate?.editCell(memo: memoModel, cell: targetCell!)
+        editDelegate?.editCell(memo: memoModel, indexPath: targetCellIndexPath!)
         dismiss(animated: true, completion: nil)
     }
     
@@ -128,8 +129,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
             if let orderedSet = memo.images {
                 for imageEntity in orderedSet  {
                     if let uiimage = UIImage(data: (imageEntity as! Image).data!) {
-                        images.append(uiimage)
-                        
+                        images.append(uiimage) // TODO: ここで無限に足してる removeFromImagesする
                     }
                 }
                 return images

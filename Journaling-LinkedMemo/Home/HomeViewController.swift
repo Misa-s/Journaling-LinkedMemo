@@ -77,20 +77,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     /// 【編集】deletegeでモーダルから呼ばれる
-    func editCell(memo: Memo, cell: MemoTableViewCell) {
-        // MemoListの更新は？
-        cell.setFields(for: memo) // TODO ここでやる必要あるのか？
+    //    func editCell(memo: Memo, cell: MemoTableViewCell) {
+    func editCell(memo: Memo, indexPath: IndexPath) {
+        self.memoList[indexPath.row] = memo
+        self.tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.right)
+        
     }
     
     /// 編集モーダルの表示
-    func openEditModal(cell: MemoTableViewCell, memo: Memo) {
+    func openEditModal(memo: Memo, cell: MemoTableViewCell) {
         let storyboard: UIStoryboard = self.storyboard!
         let modalView = storyboard.instantiateViewController(withIdentifier: "modalView") as! MemoModalViewController
         modalView.addDelegate = self
         modalView.editDelegate = self
         modalView.mode = .edit
         modalView.memoModel = memo
-        modalView.targetCell = cell
+        if let indexPath = self.tableView.indexPath(for: cell) {
+            modalView.targetCellIndexPath = indexPath
+        } else {
+            print("ERROR! not found cell index!")
+        }
         modalView.setUIImages(memo: memo)
         
         self.present(modalView, animated: true, completion: nil)

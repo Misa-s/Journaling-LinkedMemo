@@ -8,7 +8,7 @@
 import UIKit
 
 protocol EditButtonDelegate {
-    func openEditModal(cell: MemoTableViewCell, memo: Memo)
+    func openEditModal(memo: Memo, cell: MemoTableViewCell)
 }
 
 class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
@@ -45,7 +45,7 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
     
     /// 編集モーダルの表示
     @IBAction func openEditModal(_ sender: UIButton) {
-        delegate?.openEditModal(cell: self, memo: self.memo!)
+        delegate?.openEditModal(memo: self.memo!, cell: self)
     }
     
     func setImages(orderSet: NSSet){
