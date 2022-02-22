@@ -39,7 +39,6 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
     weak var editDelegate: EditDelegate?
     var mode: Mode = .add
     var memoModel: Memo =  DataManager.newMemo() // TODO: initへ
-//    var targetCell: MemoTableViewCell?
     var targetCellIndexPath: IndexPath?
     var pickerController = ImagePickerViewController()
     
@@ -78,6 +77,9 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         memoModel.memo = memo!.text
         memoModel.datatime = Date.now
         
+        // 既に登録済みのImagesは削除
+        memoModel.images = nil // 乱暴か？
+        // 新しくImagesを追加
         for uiImage in self.images {
             let imgEntity = DataManager.newImage()
             imgEntity.data = uiImage.pngData()
@@ -129,16 +131,16 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
             if let orderedSet = memo.images {
                 for imageEntity in orderedSet  {
                     if let uiimage = UIImage(data: (imageEntity as! Image).data!) {
-                        images.append(uiimage) // TODO: ここで無限に足してる removeFromImagesする
+                        images.append(uiimage)
                     }
                 }
                 return images
             }
             return []
         }()
-
+        
     }
-
+    
     /// メモ(UITextView)の高さを再調整する
     func resizeMemo() {
         let viewHeight = self.view.bounds.size.height
