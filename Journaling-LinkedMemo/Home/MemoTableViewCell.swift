@@ -12,6 +12,8 @@ protocol EditButtonDelegate {
 }
 
 class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
+    let minimumLineSpacing:CGFloat = 3.0
+    
     @IBOutlet weak var editButton: UIButton!
     
     var delegate: EditButtonDelegate?
@@ -57,7 +59,7 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
             height: itemSize
         )
         flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 3
+        flowLayout.minimumLineSpacing = minimumLineSpacing
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.collectionView.collectionViewLayout = flowLayout
         
@@ -72,11 +74,12 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
     }
     
     func resizeCollectionViewHeight(imageCount :Int){
-        self.collectionViewHeightConstraint.constant = CGFloat(getImageSize()) * CGFloat(imageCount / 2 + imageCount % 2)
+        let rowCount = imageCount / 3 + (imageCount % 3 == 2 ? 1 : imageCount % 3)
+        self.collectionViewHeightConstraint.constant = CGFloat(getImageSize()) * CGFloat(rowCount) + minimumLineSpacing
     }
     
     func getImageSize() -> CGFloat {
-        return self.collectionView.frame.width / 2
+        return self.collectionView.frame.width / 3
     }
     
 }
