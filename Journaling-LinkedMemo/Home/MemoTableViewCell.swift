@@ -35,7 +35,6 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         // Cellの投稿時間
         self.datetimeLabel.text = memo.getStrDate()
         //　画像の描画
-        
         if let imgs = memo.images {
             setImages(orderSet: imgs)
         }
