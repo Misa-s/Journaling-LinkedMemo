@@ -78,7 +78,7 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
     }
     
     func getImageSize() -> CGFloat {
-        return self.collectionView.frame.width / 3
+        return self.collectionView.frame.width / 3 - 3.0
     }
     
 }

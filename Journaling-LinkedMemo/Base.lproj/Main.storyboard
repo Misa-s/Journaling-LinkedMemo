@@ -166,7 +166,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mts-so-7sN">
-                                <rect key="frame" x="20" y="64" width="20" height="10"/>
+                                <rect key="frame" x="9" y="59" width="20" height="10"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" buttonSize="small"/>
                                 <connections>
@@ -205,7 +205,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sqb-bK-djX">
-                                <rect key="frame" x="16" y="154" width="343" height="120"/>
+                                <rect key="frame" x="16" y="189" width="343" height="120"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="qpv-n8-WSq"/>
@@ -228,26 +228,37 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="uMy-W4-qes">
+                                <rect key="frame" x="16" y="142" width="343" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="0Qq-5D-eWE"/>
+                                </constraints>
+                                <locale key="locale" localeIdentifier="ja_JP"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gsn-Tx-d7f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <accessibility key="accessibilityConfiguration" identifier="addModal"/>
                         <constraints>
-                            <constraint firstItem="sqb-bK-djX" firstAttribute="top" secondItem="bZd-QF-txh" secondAttribute="bottom" constant="20" id="9zm-cp-iYB"/>
-                            <constraint firstItem="Mts-so-7sN" firstAttribute="leading" secondItem="gsn-Tx-d7f" secondAttribute="leading" constant="20" id="TyW-aW-kqe"/>
+                            <constraint firstItem="sqb-bK-djX" firstAttribute="top" secondItem="uMy-W4-qes" secondAttribute="bottom" constant="16" id="8y2-ry-4jP"/>
+                            <constraint firstItem="Mts-so-7sN" firstAttribute="leading" secondItem="gsn-Tx-d7f" secondAttribute="leading" constant="9" id="TyW-aW-kqe"/>
                             <constraint firstItem="sqb-bK-djX" firstAttribute="leading" secondItem="gsn-Tx-d7f" secondAttribute="leading" constant="16" id="Ylt-bJ-b2h"/>
+                            <constraint firstItem="gsn-Tx-d7f" firstAttribute="trailing" secondItem="uMy-W4-qes" secondAttribute="trailing" constant="16" id="ZHG-qm-bEa"/>
                             <constraint firstItem="bZd-QF-txh" firstAttribute="top" secondItem="TRP-Ot-rCB" secondAttribute="bottom" constant="20" id="chi-aR-4hz"/>
                             <constraint firstItem="gsn-Tx-d7f" firstAttribute="trailing" secondItem="TRP-Ot-rCB" secondAttribute="trailing" constant="20" id="ctQ-JK-yHM"/>
+                            <constraint firstItem="uMy-W4-qes" firstAttribute="top" secondItem="bZd-QF-txh" secondAttribute="bottom" constant="16" id="dEU-Xa-9V3"/>
                             <constraint firstItem="bZd-QF-txh" firstAttribute="leading" secondItem="gsn-Tx-d7f" secondAttribute="leading" constant="16" id="hhi-H3-Zg5"/>
-                            <constraint firstItem="Mts-so-7sN" firstAttribute="top" secondItem="gsn-Tx-d7f" secondAttribute="top" constant="20" id="hxw-qA-LPM"/>
+                            <constraint firstItem="Mts-so-7sN" firstAttribute="top" secondItem="gsn-Tx-d7f" secondAttribute="top" constant="15" id="hxw-qA-LPM"/>
                             <constraint firstItem="gsn-Tx-d7f" firstAttribute="trailing" secondItem="bZd-QF-txh" secondAttribute="trailing" constant="16" id="iM7-wT-Ku4"/>
                             <constraint firstItem="TRP-Ot-rCB" firstAttribute="top" secondItem="gsn-Tx-d7f" secondAttribute="top" constant="20" id="oGI-XP-4iU"/>
                             <constraint firstItem="gsn-Tx-d7f" firstAttribute="trailing" secondItem="sqb-bK-djX" secondAttribute="trailing" constant="16" id="ru5-ip-pQ3"/>
+                            <constraint firstItem="uMy-W4-qes" firstAttribute="leading" secondItem="gsn-Tx-d7f" secondAttribute="leading" constant="16" id="vLD-V9-TBU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="Mts-so-7sN" id="RBW-L1-3iB"/>
                         <outlet property="collectionView" destination="sqb-bK-djX" id="TUx-68-WYV"/>
+                        <outlet property="datePicker" destination="uMy-W4-qes" id="3gB-q4-d52"/>
                         <outlet property="memo" destination="bZd-QF-txh" id="IU4-tX-4Sn"/>
                     </connections>
                 </viewController>

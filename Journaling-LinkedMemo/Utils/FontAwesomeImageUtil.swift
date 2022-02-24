@@ -35,7 +35,7 @@ class FontAwesomeImageUtil {
     
     /// キャンセルボタン（モーダル）
     static func canselButtonForModal() -> UIImage {
-        return UIImage.fontAwesomeIcon(name: .windowClose, style: .solid, textColor: primary, size: CGSize(width: 40, height: 40))
+        return UIImage.fontAwesomeIcon(name: .windowClose, style: .solid, textColor: primary, size: CGSize(width: 45, height: 45))
     }
     
     /// キーボードツールバー用：画像アイコン

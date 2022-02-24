@@ -27,13 +27,13 @@ enum Mode {
 /// メモの追加・編集用のモーダル
 class MemoModalViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate {
     
-    final var imageViewHeigth: CGFloat = 120.0
     final var headerHeight: CGFloat = 80.0
     final let toolBarHeight: CGFloat = 50.0
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var memo: GrowingTextView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     weak var addDelegate: AddDelegate?
     weak var editDelegate: EditDelegate?
@@ -56,10 +56,19 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         self.memo.delegate = self
         resizeMemo()
         
+        // 日時をセット
+        self.datePicker.locale = .current
+        if let dateTime = memoModel.datatime {
+            self.datePicker.date = dateTime
+        } else {
+            self.datePicker.date = Date()
+        }
+        
         // 画像表示エリアのデリゲートに自身をセット
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.reloadData()
+        
         // キャンセルボタン
         self.cancelButton.setImage(FontAwesomeImageUtil.canselButtonForModal(), for: .normal)
         
@@ -75,7 +84,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
     
     @IBAction func postButton(_ sender: UIButton) {
         memoModel.memo = memo!.text
-        memoModel.datatime = Date.now
+        memoModel.datatime = self.datePicker.date
         
         // 既に登録済みのImagesは削除
         memoModel.images = nil // 乱暴か？
@@ -145,9 +154,14 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
     func resizeMemo() {
         let viewHeight = self.view.bounds.size.height
         let memoY = 115.0 // self.memo.bounds.origin.y
-        let collectionViewHeight =  self.images.count > 0 ? imageViewHeigth : 0.0
+        let collectionViewHeight =  self.images.count > 0 ? imageViewHeigth() : 0.0
         let spaces = 30.0
-        self.memo.maxHeight = viewHeight - (memoY + collectionViewHeight + toolBarHeight + spaces)
+        let datePickerHeight = 35.0
+        self.memo.maxHeight = viewHeight - (memoY + collectionViewHeight + toolBarHeight + spaces + datePickerHeight)
+    }
+    
+    func imageViewHeigth() -> CGFloat {
+        return self.collectionView.frame.width / 3
     }
 }
 
@@ -166,6 +180,7 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         resizeMemo()
         
+        let imageViewHeigth = imageViewHeigth()
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
         
         let image = self.images[indexPath.row]
@@ -177,8 +192,8 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let horizontalSpace : CGFloat = 10
-        let cellSize : CGFloat = imageViewHeigth - horizontalSpace
+        let horizontalSpace : CGFloat = 3
+        let cellSize : CGFloat = imageViewHeigth() - horizontalSpace
         return CGSize(width: cellSize, height: cellSize)
     }
     
