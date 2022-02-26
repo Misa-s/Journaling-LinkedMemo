@@ -26,32 +26,23 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
     @IBOutlet weak var memoLabel: UILabel!
     @IBOutlet weak var datetimeLabel: UILabel!
     
-    func setFields(for memo: Memo) {
-        //　編集ボタン
-        self.editButton.setImage(FontAwesomeImageUtil.editButtonForCell(), for: .normal)
-        self.memo = memo
-        // Cellのメモ
-        self.memoLabel.text = memo.memo
-        // Cellの投稿時間
-        self.datetimeLabel.text = memo.getStrDate()
-        //　画像の描画
-        if let imgs = memo.images {
-            setImages(orderSet: imgs)
-        }
-        resizeCollectionViewHeight(imageCount: self.images.count)
-        
+    /// セルの初期化
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        resetCell()
+    }
+    
+    func resetCell() {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-    }
-    
-    /// 編集モーダルの表示
-    @IBAction func openEditModal(_ sender: UIButton) {
-        delegate?.openEditModal(memo: self.memo!, cell: self)
-    }
-    
-    func setImages(orderSet: NSSet){
-        let itemSize  = getImageSize()
+        
+        //　編集ボタン
+        self.editButton.setImage(FontAwesomeImageUtil.editButtonForCell(), for: .normal)
+        self.memoLabel.text = ""
+        self.datetimeLabel.text = ""
+        
         // CollectionViewのレイアウト
+        let itemSize  = getImageSize()
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(
             width: itemSize,
@@ -62,9 +53,47 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.collectionView.collectionViewLayout = flowLayout
         
-        // 画像を読み込む
         self.images = []
         self.collectionView.reloadData()
+    }
+
+    
+    func setFields(for memo: Memo){
+        resetCell()
+        
+        self.memo = memo
+        // Cellのメモ
+        self.memoLabel.text = memo.memo
+        // Cellの投稿時間
+        self.datetimeLabel.text = memo.getStrDate()
+        //　画像の描画
+        if let imgs = memo.images {
+            setImages(orderSet: imgs)
+        }
+        resizeCollectionViewHeight(imageCount: self.images.count)
+    }
+    
+    /// 編集モーダルの表示
+    @IBAction func openEditModal(_ sender: UIButton) {
+        delegate?.openEditModal(memo: self.memo!, cell: self)
+    }
+    
+    func setImages(orderSet: NSSet){
+//        let itemSize  = getImageSize()
+//        // CollectionViewのレイアウト
+//        let flowLayout = UICollectionViewFlowLayout()
+//        flowLayout.itemSize = CGSize(
+//            width: itemSize,
+//            height: itemSize
+//        )
+//        flowLayout.minimumInteritemSpacing = 0
+//        flowLayout.minimumLineSpacing = minimumLineSpacing
+//        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+//        self.collectionView.collectionViewLayout = flowLayout
+        
+        // 画像を読み込む
+//        self.images = []
+//        self.collectionView.reloadData()
         for imageEntity in orderSet  {
             if let uiimage = UIImage(data: (imageEntity as! Image).data!) {
                 self.images.append(uiimage)
