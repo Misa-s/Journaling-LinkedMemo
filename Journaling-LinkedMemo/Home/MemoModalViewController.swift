@@ -33,6 +33,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var memo: GrowingTextView!
+    @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
     weak var addDelegate: AddDelegate?
@@ -57,11 +58,11 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         resizeMemo()
         
         // 日時をセット
-        self.datePicker.locale = .current
+        self.datePicker.locale = Locale(identifier: "ja_JP")
         if let dateTime = memoModel.datatime {
             self.datePicker.date = dateTime
         } else {
-            self.datePicker.date = Date()
+            self.datePicker.date = Date.now
         }
         
         // 画像表示エリアのデリゲートに自身をセット
@@ -71,6 +72,9 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         
         // キャンセルボタン
         self.cancelButton.setImage(FontAwesomeImageUtil.canselButtonForModal(), for: .normal)
+        
+        // 投稿ボタン
+        changeEnabledForPostButton(textView: self.memo)
         
         // keyboardToolBar
         let bar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: toolBarHeight))
@@ -118,7 +122,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
         self.pickerController.sourceType = .photo
         self.pickerController.showsCancelButton = true
         
-        self.pickerController.didSelectAssets = { (assets: [DKAsset]) in
+        self.pickerController.didSelectAssets = { [self] (assets: [DKAsset]) in
             self.images.removeAll()
             for asset in assets {
                 asset.fetchFullScreenImage(completeBlock: { (image: UIImage?, info) in
@@ -126,6 +130,7 @@ class MemoModalViewController: UIViewController, UINavigationControllerDelegate,
                         self.images.append(img)
                         let indexPath = IndexPath(row: self.images.count - 1, section: 0)
                         self.collectionView.insertItems(at: [indexPath])
+                        changeEnabledForPostButton(textView: self.memo) // 非同期っぽいのでここでやる
                     }})
             }
             self.collectionView.reloadData()
@@ -170,6 +175,18 @@ extension MemoModalViewController: UICollectionViewDelegate, UICollectionViewDat
     func textViewDidChangeHeight(_ textView: GrowingTextView, height: CGFloat) {
         UIView.animate(withDuration: 0.2) {
             self.memo.layoutIfNeeded()
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        changeEnabledForPostButton(textView: textView)
+    }
+    
+    func changeEnabledForPostButton(textView: UITextView) {
+        if textView.text.isEmpty && self.images.count < 1 {
+            self.postButton.isEnabled = false // 無効
+        } else {
+            self.postButton.isEnabled = true
         }
     }
     

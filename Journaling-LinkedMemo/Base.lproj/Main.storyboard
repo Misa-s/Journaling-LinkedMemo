@@ -260,6 +260,7 @@
                         <outlet property="collectionView" destination="sqb-bK-djX" id="TUx-68-WYV"/>
                         <outlet property="datePicker" destination="uMy-W4-qes" id="3gB-q4-d52"/>
                         <outlet property="memo" destination="bZd-QF-txh" id="IU4-tX-4Sn"/>
+                        <outlet property="postButton" destination="TRP-Ot-rCB" id="zb5-xP-Cdt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biV-GX-RnJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

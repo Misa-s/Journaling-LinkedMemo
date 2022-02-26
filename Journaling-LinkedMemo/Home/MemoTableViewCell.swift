@@ -64,6 +64,7 @@ class MemoTableViewCell: UITableViewCell, UICollectionViewDelegate {
         
         // 画像を読み込む
         self.images = []
+        self.collectionView.reloadData()
         for imageEntity in orderSet  {
             if let uiimage = UIImage(data: (imageEntity as! Image).data!) {
                 self.images.append(uiimage)
@@ -94,6 +95,9 @@ extension MemoTableViewCell :UICollectionViewDataSource {
         cell.sizeToFit()
         cell.addSubview(imageView)
         cell.layer.cornerRadius = 10
+        
+        // 削除ボタンの追加
+        // 削除関数の登録？
         return cell
     }
     
